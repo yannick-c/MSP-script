@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2017.4.19)  5 MAY 2017 09:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2017.4.19)  5 MAY 2017 18:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1125,7 +1125,7 @@ File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
 ] [3] [4] [5]
 [6
 
-] [7] [8] [9] [10] <fermidirac.pdf, id=186, 285.32693pt x 284.13966pt>
+] [7] [8] [9] [10] <fermidirac.pdf, id=191, 285.32693pt x 284.13966pt>
 File: fermidirac.pdf Graphic file (type pdf)
 
 <use fermidirac.pdf>
@@ -1140,27 +1140,27 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             `cmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [11 <./fermidirac.pdf>] [12]
+ [11 <./fermidirac.pdf>] [12] [13] [14] [15]
 \tf@toc=\write5
 \openout5 = `script.toc'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 470.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 470.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 574.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 574.
  (./script.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 470.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 470.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 574.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 574.
 Package rerunfilecheck Info: File `script.out' has not changed.
-(rerunfilecheck)             Checksum: F8D635D4D29457BE3168E97A043F0F7A;196.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 470.
+(rerunfilecheck)             Checksum: D6B4AC2F900DB35758A25AC9FDF4034E;248.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 574.
  ) 
 Here is how much of TeX's memory you used:
- 12828 strings out of 493013
- 185064 string characters out of 6139317
- 352491 words of memory out of 5000000
- 16004 multiletter control sequences out of 15000+600000
- 23656 words of font info for 94 fonts, out of 8000000 for 9000
+ 12880 strings out of 493013
+ 185735 string characters out of 6139317
+ 352569 words of memory out of 5000000
+ 16007 multiletter control sequences out of 15000+600000
+ 23947 words of font info for 99 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 34i,16n,38p,424b,622s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 34i,16n,38p,451b,622s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/font
 s/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public
@@ -1183,10 +1183,10 @@ r/sfrm1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
 mf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf-dist/fonts/t
 ype1/public/cm-super/sfti1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-
 super/sftt1000.pfb>
-Output written on script.pdf (12 pages, 397119 bytes).
+Output written on script.pdf (15 pages, 423467 bytes).
 PDF statistics:
- 365 PDF objects out of 1000 (max. 8388607)
- 305 compressed objects within 4 object streams
- 119 named destinations out of 1000 (max. 500000)
- 18982 words of extra memory for PDF output out of 20736 (max. 10000000)
+ 434 PDF objects out of 1000 (max. 8388607)
+ 364 compressed objects within 4 object streams
+ 158 named destinations out of 1000 (max. 500000)
+ 18990 words of extra memory for PDF output out of 20736 (max. 10000000)
 
