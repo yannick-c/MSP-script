@@ -175,17 +175,17 @@ openany, % A chapter may start on either a recto or verso page.
 \tableofcontents
 
 \newpage\chapter{Preliminary stuff}
-In the Heisenberg picture of quantum mechanics there are three core principles \begin{enumerate}
+In the Heisenberg picture of quantum mechanics there are three core principles: \begin{enumerate}
 	\item Central objects are the observables, which are realized as operators on a Hilbert space.
 	\item Time evolution acts on observables.
 	\item Auxiliary objects are the states, realized as vectors on the Hilbert space, used to compute expectation values of observables.
 \end{enumerate}
-This is a notion heavily based on physical intuition. One can translate these three principles into a mathematical formulation in the following way. \begin{enumerate}
+This is a notion heavily based on physical intuition. One can translate these three principles into a mathematical formulation in the following way: \begin{enumerate}
 	\item The set of observables is a \textit{C*-algebra} $\mathcal{A}$, namely: \begin{itemize}
 		\item $\mathcal{A}$ is an associative algebra.
 		\item $\mathcal{A}$ is equipped with a norm such that $\|A\cdot B\| \leq \| A \|\cdot \| B\| $.
-		\item it is complete with respect to $\| \cdot \|$.
-		\item equipped with an involution $*:\mathcal{A}\rightarrow \mathcal{A}$ such that \begin{align}
+		\item It is complete with respect to $\| \cdot \|$.
+		\item It is equipped with an involution $*:\mathcal{A}\rightarrow \mathcal{A}$ such that \begin{align}
 		(A^*)^*&=A\\
 		(A+\lambda B)^* &= A^* +\overline{\lambda}B^*\\
 		(AB)^*&=B^*A^*
@@ -291,25 +291,25 @@ There are two types of indistinguishable particles in nature \begin{enumerate}
 	\item Bosons have a symmetric wave function.
 	\item Fermions have an antisymmetric wavefunction.
 \end{enumerate}
-A Hilbert space carrying an arbitrary number of particles is a Fock space built upon the one-particle Hilbert space. Action of the symmetric group $S_n$ on $\otimes^N\mathcal{H}$. \begin{align}
+A Hilbert space carrying an arbitrary number of particles is a Fock space built upon the one-particle Hilbert space. Action of the symmetric group $S_n$ on $\otimes^N\mathcal{H}$ is then given by \begin{align}
 P_{\sigma}:\psi_1\otimes \cdots \otimes \psi_N \longmapsto {\psi}_{\sigma^{-1}(1)}\otimes \cdots \otimes \psi_{\sigma^{-1}(N)}\; ,
 \end{align}
-for any $\sigma\in S_n$ (check $P_{\sigma\sigma'}=P_{\sigma}\circ P_{\sigma'}$ and so on) and now \begin{align}
+for any $\sigma\in S_n$ (check $P_{\sigma\sigma'}=P_{\sigma}\circ P_{\sigma'}$ and so on) and one defines the space of (anti-)symmetric wavefunctions as \begin{align}
 \mathcal{H}_{s/a}^{N}&:=\{\psi\in\otimes^N\mathcal{H}:P_{\sigma}\psi=\delta(\sigma)\psi \text{ for any } \sigma\in S_n\}\; ,\\\delta(\sigma)&=\begin{cases}
 1 &\text{ if ''s'' (Bosons)}\\
 -1 &\text{ if ''a'' (Fermions)}
 \end{cases}\; .
 \end{align}
 Furthermore one has $\mathcal{H}_{s/a}^0:=\mathbb{C}$ with unit vector $\Omega$, called ''vacuum''. Now the Fock space is given by \begin{align}
-\mathcal{F}_{s/a}(\mathcal{H})=\bigoplus_{N\in\mathcal{N}\cup\{0\}}\mathcal{H}_{s/a}^N\; ,
+\mathcal{F}_{s/a}(\mathcal{H})=\bigoplus_{N\in\mathbb{N}\cup\{0\}}\mathcal{H}_{s/a}^N\; ,
 \end{align}
-$\psi\in\mathcal{F}_{s/a}(\mathcal{H})$ is represented as $(\psi^N)_{N\in\mathcal{N}\cup\{0\}}=(\psi^0,\psi^1,\ldots)$ where $\psi^N\in\mathcal{H}^N_{s/a}$ with the norm given by \begin{align}
+$\psi\in\mathcal{F}_{s/a}(\mathcal{H})$ is represented as $(\psi^N)_{N\in\mathbb{N}\cup\{0\}}=(\psi^0,\psi^1,\ldots)$ where $\psi^N\in\mathcal{H}^N_{s/a}$ with the norm given by \begin{align}
 \|\psi\|^2_{\mathcal{F}_{s/a}(\mathcal{H})}=\sum_{N\geq 0}\|\psi^N\|^2_{\otimes^N\mathcal{H}}\; .
 \end{align}
 \begin{remarks}
 	\begin{itemize}
-		\item This sum has to be convergent, thus the series elements have to decrease in value. Sinc ehte proability to have more than $M$ particles is given by taking the sum $\sum_{N\geq M}\|\psi^N\|^2_{\otimes^N\mathcal{H}}$. So Fock space does not describe the infinite particle state as for $M\rightarrow\infty$ the state would always be zero. One can only take the TDL.
-		\item The number operator is given by $(N\psi)^N=N\psi^N$ for any $N\in \mathcal{N}$.
+		\item This sum has to be convergent, thus the series elements have to decrease in value. Since the probability to have more than $M$ particles is given by taking the sum $\sum_{N\geq M}\|\psi^N\|^2_{\otimes^N\mathcal{H}}$ one can conclude that the Fock space does not describe the infinite particle state as for $M\rightarrow\infty$ the state would always be zero. One can only take the TDL.
+		\item The number operator is given by $(N\psi)^N=N\psi^N$ for any $N\in \mathbb{N}$.
 		\item Second quantization: If $A:\mathcal{H}\rightarrow \mathcal{H}$ is a linear operator then define $\Gamma(A),\mathrm{d}\Gamma(A):\mathcal{H}_{s/a}^N\rightarrow \mathcal{H}_{s/a}^N$ for any $N$ where \begin{align}
 		\Gamma(A)&=A\otimes \cdots \otimes A\\
 		\mathrm{d}\Gamma(A)&=\sum_{j=1}^N\mathds{1}\otimes\cdots\otimes \mathds{1}\otimes \underbrace{A}_{\text{j-th position}}\otimes \mathds{1}\cdots \otimes \mathds{1}\;,
@@ -317,7 +317,7 @@ $\psi\in\mathcal{F}_{s/a}(\mathcal{H})$ is represented as $(\psi^N)_{N\in\mathca
 		with which one has $N=\mathrm{d}\Gamma(\mathds{1})$. Also if $A$ is self-adjoint then $\frac{\mathrm{d}}{\mathrm{d}t}\Gamma(e^{itA})\mid_{t=0}=i\mathrm{d}\Gamma(A)$ i.e. $\Gamma(e^{itA})=e^{itd\Gamma(A)}$.
 	\end{itemize}
 \end{remarks}
-The core concepts of Fock spaces are those of annihilation and creation operators. \begin{itemize}
+The core concepts of Fock spaces are those of annihilation and creation operators: \begin{itemize}
 	\item Annihilation operators: For $\varphi\in\mathcal{H}$ one defines \begin{align}
 	b(\varphi):\otimes^N\mathcal{H}&\longrightarrow \otimes^{N-1}\mathcal{H}\\
 	b(\varphi)(\psi_1\otimes\ldots\otimes\psi_N)&=\sqrt{N}\langle \varphi,\psi_1\rangle_{\mathcal{H}}~\psi_2\otimes\ldots\otimes\psi_N\\
@@ -326,7 +326,7 @@ The core concepts of Fock spaces are those of annihilation and creation operator
 	Since $b(\varphi):\mathcal{H}_{s/a}^N\rightarrow \mathcal{H}_{s/a}^{N-1}$ for any $N$, it extends to a map $b(\varphi):\mathcal{F}_{s/a}(\mathcal{H})\rightarrow \mathcal{F}_{s/a}(\mathcal{H})$.
 	\item Creation operators: For $\varphi\in\mathcal{H}$ one defines \begin{align}
 	b^*(\varphi)\psi^{N-1}&=\frac{1}{\sqrt{N}}\sum_{k=1}^{N}(\pm 1)^{k-1}P_{\pi_k}(\varphi\otimes \psi^{N-1}) \text{ where $\pm$ is for $s/a$ and}\\
-	\pi_k^{-1}&=(k,1,2,\cdots,k-1,k+1,\cdot,N)\; .
+	\pi_k^{-1}&=(k,1,2,\cdots,k-1,k+1,\cdots,N)\; .
 	\end{align}
 	This can be interpreted as inserting a particle $\varphi$ into each position and average over the possible positions, that's what $P_{\pi_k}$ does, inserting into the $k$-th position. Proving this exactly is cumbersome.
 	\end{itemize}
@@ -340,7 +340,7 @@ The core concepts of Fock spaces are those of annihilation and creation operator
 		[b(\varphi),b^*(\psi)]&=\langle\varphi,\psi\rangle\mathds{1}\\
 		[b(\varphi),b(\psi)]&=[b^*(\varphi),b^*(\psi)]=0\; .
 		\end{align}
-		\item Canonical anticommutatoin relation on $\mathcal{F}_a(\mathcal{H})$ (CAR)\begin{align}
+		\item Canonical anticommutation relation on $\mathcal{F}_a(\mathcal{H})$ (CAR)\begin{align}
 		\{b(\varphi),b^{\dagger}(\psi)\}&=\langle\varphi,\psi\rangle \mathds{1}\\
 		\{b(\varphi),b(\psi)\}&=\{b^*(\varphi),b^*(\psi)\}=0\; ,
 		\end{align}
@@ -348,29 +348,30 @@ The core concepts of Fock spaces are those of annihilation and creation operator
 	\end{itemize}
 \end{remarks}
 \section{Fermions}
-The (CAR) relations indicate that the fermionic creation/anihilation operators are a representation of the abstract algebra $CAR(\mathcal{H})$, defined as the $C^*$-algebra generated by $\mathds{1}, a(\varphi), \varphi\in\mathcal{H}$ satisfying: \begin{itemize}
+The (CAR) relations indicate that the fermionic creation/anihilation operators are a representation of the abstract algebra $CAR(\mathcal{H})$, defined as the $C^*$-algebra generated by $\mathds{1}$ and $a(\varphi), \varphi\in\mathcal{H}$ satisfying: \begin{itemize}
 	\item $\varphi\mapsto a(\varphi)$ is antilinear.
 	\item $\{a(\varphi),a(\psi)^*\}=\langle\varphi,\psi\rangle$ ; $\{a(\varphi),a(\psi)\}=0=\{a(\varphi)^*,a(\psi)^*\}$. 
 \end{itemize}
 Since \begin{align}
 (a(\varphi)^*a(\varphi))^2=&a(\varphi)^*\{a(\varphi),a(\varphi)^*\}a(\varphi)\\
-=&\|\varphi\|^2a(\varphi)^*a(\varphi)\mid \text{ by the C*-property}\\
-=&\|a(\varphi)^*a(\varphi)\|^2=\|\varphi\|^2\|a(\varphi)^*a(\varphi)\|\\
+=&\|\varphi\|^2a(\varphi)^*a(\varphi)\;,\end{align}
+so by taking the norm on both sides and applying the $C^*$-property one finds \begin{align}
+&\|a(\varphi)^*a(\varphi)\|^2=\|\varphi\|^2\|a(\varphi)^*a(\varphi)\|\\
 \Rightarrow&\|a(\varphi)^*\|=\|\varphi\|\; ,
 \end{align}
-so that the map $\varphi\mapsto a(\varphi)^*$ is continuous. \begin{remarks}
+i.e. that the map $\varphi\mapsto a(\varphi)^*$ is continuous. \begin{remarks}
 	\begin{itemize}
 		\item If $h$ is a pre-Hilbert space, with $\overline{h}=\mathcal{H}$, then $CAR(h)=CAR(\mathcal{H})$.
 		\item $CAR(\mathcal{H})$ is unique up to $*$-isomorphisms.
 	\end{itemize}
 \end{remarks}
-Consider Thermal equilibrium in a finite volume $\Lambda \subset C\mathbb{R}^d$. The \textit{Gibbs state} at inverse temperature $0<\beta<\infty$ and chemical potential $\mu\in\mathbb{R}$ is given by \begin{align}
-w_{\beta,\mu}^{\Lambda}(A):=Z^{-1}_{\beta,\mu} \mathrm{Tr}(e^{-\beta K_{\mu}}A)\; ,
+\begin{example} Consider Thermal equilibrium in a finite volume $\Lambda \subset C\mathbb{R}^d$. The \textit{Gibbs state} at inverse temperature $0<\beta<\infty$ and chemical potential $\mu\in\mathbb{R}$ is given by \begin{align}
+w_{\beta,\mu}^{\Lambda}(A):=Z^{-1}_{\beta,\mu} \mathrm{Tr}(e^{-\beta K_{\mu}}A)\; ,\label{Eqn::def_gibbs_state}
 \end{align}
 where $A\in \mathrm{CAR}(\mathcal{H}_1)$ and $K_{\mu}=\mathrm{d}\Gamma(H-\mu\mathds{1})=\mathrm{d}\Gamma(H)-\mu\mathcal{N}$ and \begin{align}
 Z_{\beta,\mu}=\mathrm{Tr}(e^{-\beta K_{\mu}})\; ,
 \end{align}
-whenever $\exp(-\beta K_{\mu})\in I_1(\mathcal{F}_a(\mathcal{H}_1))$ (trace-class operator).
+whenever $\exp(-\beta K_{\mu})\in I_1(\mathcal{F}_a(\mathcal{H}_1))$ (trace-class operator).\end{example}
 \begin{lemma}
 	$\exp(-\beta H)\in I_1(\mathcal{H}_1)\Leftrightarrow \exp(-\beta K_{\mu})\in I_1(\mathcal{F}_a(\mathcal{H}_q))\forall\mu\in \mathbb{R}$.
 \end{lemma}
@@ -378,29 +379,30 @@ whenever $\exp(-\beta K_{\mu})\in I_1(\mathcal{F}_a(\mathcal{H}_1))$ (trace-clas
 	$\Lambda=[-L/2,L/2], \mathcal{H}_1=L^2(\Lambda), H=-\Delta_L$.
 
 \underline{But} $-\Delta$ on $\mathbb{R}^d$ has purely absolutely continuous spectrum so $\exp(\Delta)$ cannot be trace-class. Defining the activity Z as \begin{align}
-Z=e^{\beta\mu}\; ,
+z=e^{\beta\mu}\; ,
 \end{align}
 one can find the following relation \begin{align}
-\exp(-\beta K_{\mu})&=\gamma(\exp(-\beta(H-\mu\mathds{1})))=Z\Gamma(\exp(-\beta H))\\
+\exp(-\beta K_{\mu})&=\Gamma(\exp(-\beta(H-\mu\mathds{1})))=z\Gamma(\exp(-\beta H))\\
 e^{-\beta K_{\mu}}b^{\#}(\varphi)&=zb^{\#}(e^{-\beta H}\varphi)e^{-\beta K_{\mu}}\label{eqn::hashtag_dat_shit}\; ,
 \end{align}
 whereby the hashtag is a placeholder for nothing or dagger.
 \begin{prop}
 	If $\exp(-\beta H)\in I_1(\mathcal{H}_1)$, then the Gibbs states are given by\begin{align}
-	\omega_{\beta,\mu}(a^{*}(\varphi)a(\psi))&=\langle \psi, Ze^{-\beta H}(1+Ze^{-\beta H})^{-1}\varphi\rangle\\
+	\omega_{\beta,\mu}(a^{*}(\varphi)a(\psi))&=\langle \psi, ze^{-\beta H}(1+ze^{-\beta H})^{-1}\varphi\rangle\\
 	\omega_{\beta,\mu}(a^*(\varphi))&=0=\omega_{\beta,\mu}(a(\varphi))\; .
 	\end{align}
 \end{prop}
 \begin{proof}
-	By Eq. \eqref{eqn::hashtag_dat_shit} one has \begin{align}
-	\omega_{\beta,\mu}(a^{*}(\tilde{\varphi})a(\psi))&=Z^{-1}_{\beta,\mu}\mathrm{Tr}(b^*(Ze^{-\beta H}\tilde{\varphi})e^{-\beta K_{\mu}}b(\varphi)) \mid \text{cyclicity of trace}\\
-	&=\omega_{\beta,\mu}(a(\psi)a^*(Ze^{-\beta H}\tilde{\varphi})) \mid \text{use CAR}\\
-	&=-\omega_{\beta,\mu}(a^*(Ze^{-\beta H}\tilde{\varphi})a(\psi))\langle \psi, Ze^{-\beta H}\tilde{\varphi}\rangle\\
-	\Rightarrow \omega_{\beta,\mu}(a^*((\mathds{1}+Ze^{-\beta H})\tilde{\varphi})a(\psi))&=\langle \psi, Ze^{-\beta H} \tilde{\varphi}\rangle\; ,
+	The proof uses first the definition of Gibbs state in Eq. \eqref{Eqn::def_gibbs_state} and then Eq. \eqref{eqn::hashtag_dat_shit} giving in the first line\begin{align}
+	\omega_{\beta,\mu}(a^{*}(\tilde{\varphi})a(\psi))&=Z^{-1}_{\beta,\mu}\mathrm{Tr}(zb^*(e^{-\beta H}\tilde{\varphi})e^{-\beta K_{\mu}}b(\varphi)) \mid \text{cyclicity of trace}\\
+	&=z\omega_{\beta,\mu}(a(\psi)a^*(e^{-\beta H}\tilde{\varphi})) \mid \text{use CAR}\\
+	&=-z\omega_{\beta,\mu}(a^*(e^{-\beta H}\tilde{\varphi})a(\psi))\langle \psi, ze^{-\beta H}\tilde{\varphi}\rangle\\
+	&=-\omega_{\beta,\mu}(a^*(ze^{-\beta H}\tilde{\varphi})a(\psi))\langle \psi, ze^{-\beta H}\tilde{\varphi}\rangle\\
+	\Rightarrow \omega_{\beta,\mu}(a^*((\mathds{1}+ze^{-\beta H})\tilde{\varphi})a(\psi))&=\langle \psi, ze^{-\beta H} \tilde{\varphi}\rangle\; ,
 	\end{align}
-	and hence the first term of the claim, since $Ze^{-\beta H}>0$ implies that $(\mathds{1}+Ze^{-\beta H})$ is invertible.\\
-	If $\psi$ is such that $\mathcal{N}\psi= N\psi$ (i.e. finite particle number) then \begin{align}
-	\langle \psi,e^{-\beta K_{\mu}}\psi\rangle &={N}^{-1}\langle \psi , e^{-\beta K_{\mu}}b(\varphi)\mathcal{N}\psi\rangle\\
+	and hence the first term of the claim, since $ze^{-\beta H}>0$ implies that $(\mathds{1}+ze^{-\beta H})$ is invertible.\\
+	If $\psi$ is such that $\mathcal{N}\psi= N\psi$ (i.e. fixed particle number) then \begin{align}
+	\langle \psi,e^{-\beta K_{\mu}}\psi\rangle &={N}^{-1}\langle \psi , e^{-\beta K_{\mu}}bThe CAR algebra is faithfully represented on F a ( H ) {\displaystyle F_{a}(H)} F_{a}(H) by setting(\varphi)\mathcal{N}\psi\rangle\\
 	&= N^{-1}\langle \psi, (\mathcal{N}+1)e^{-\beta K_{\mu}}b(\varphi)\psi\rangle\\
 	&=\frac{N+1}{N}\langle \psi, e^{-\beta K_{\mu}}b(\varphi)\psi\rangle\\
 	\Rightarrow \langle \psi,e^{-\beta K_{\mu}}\psi\rangle&=0\; .
