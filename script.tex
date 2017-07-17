@@ -402,12 +402,12 @@ whereby the hashtag is a placeholder for nothing or dagger.
 	\end{align}
 	and hence the first term of the claim, since $ze^{-\beta H}>0$ implies that $(\mathds{1}+ze^{-\beta H})$ is invertible.\\
 	If $\psi$ is such that $\mathcal{N}\psi= N\psi$ (i.e. fixed particle number) then \begin{align}
-	\langle \psi,e^{-\beta K_{\mu}}\psi\rangle &={N}^{-1}\langle \psi , e^{-\beta K_{\mu}}bThe CAR algebra is faithfully represented on F a ( H ) {\displaystyle F_{a}(H)} F_{a}(H) by setting(\varphi)\mathcal{N}\psi\rangle\\
+	\langle \psi,e^{-\beta K_{\mu}}b(\varphi)\psi\rangle &={N}^{-1}\langle \psi , e^{-\beta K_{\mu}}(\mathcal{N}+1)b(\varphi)\psi\rangle\\
 	&= N^{-1}\langle \psi, (\mathcal{N}+1)e^{-\beta K_{\mu}}b(\varphi)\psi\rangle\\
 	&=\frac{N+1}{N}\langle \psi, e^{-\beta K_{\mu}}b(\varphi)\psi\rangle\\
 	\Rightarrow \langle \psi,e^{-\beta K_{\mu}}\psi\rangle&=0\; .
 	\end{align}
-	Computing $\mathrm{Tr}(e^{-\beta K_{\mu}}b(\varphi))$ in a basis such vectors proves the claim. Now: By a similar argument \begin{align}
+	Computing $\mathrm{Tr}(e^{-\beta K_{\mu}}b(\varphi))$ in a basis of such vectors proves the claim. Now: By a similar argument \begin{align}
 	\omega_{\beta,\mu}(a^*(\varphi_1)\cdots a^{*}(\varphi_n)a(\psi_m)\cdots a(\psi_1))=\delta_{n,m}\det\left(\{\langle\psi_i,\varrho\psi_j\rangle\}_{i,j=1}^{n}\right)\; ,	\end{align}$\text{where }\varrho = Ze^{-\beta H}(\mathds{1}+Ze^{-\beta H})^{-1}$.
 \end{proof}
 \end{example}
@@ -415,14 +415,15 @@ whereby the hashtag is a placeholder for nothing or dagger.
 	The \textit{2n-point function} is expressed in terms of the 2-point function $\langle \psi, Ze^{-\beta H}(\mathds{1}+Ze^{-\beta H})^{-1}\varphi\rangle$ called \textit{Gaussian state} or \textit{quasi-free state}.
 \end{remarks}
 \begin{remarks}
-	The crucial property used in this calculation, expressed in Eq. \eqref{eqn::hashtag_dat_shit}, is the \textit{KMS condition}: \begin{align}
-	\omega_{\beta,\mu}(BA)&=\omega_{\beta,\mu}(A\underbrace{\tau_{i\beta}(B)}_{e^{\beta K_{\mu}}Be^{-\beta K_{\mu}}})\; .
+	The crucial property used in this calculation, expressed in Eq. \eqref{eqn::hashtag_dat_shit}, is the so called \textit{KMS condition}: \begin{align}
+	\omega_{\beta,\mu}(BA)&=\omega_{\beta,\mu}(A\tau_{i\beta}(B))\\
+	&=\omega_{\beta,\mu}(Ae^{\beta K_{\mu}}Be^{-\beta K_{\mu}})\; .
 	\end{align}
 \end{remarks}
-Take the thermodynamic limit, which means here that $\mathcal{H}=L^2(\mathbb{R}^d)$, then one has to take the limit of the operators \begin{align}
+The next question is how one takes the TDL, which means here that $\mathcal{H}\rightarrow L^2(\mathbb{R}^d)$, then one has to take the limit of the operators \begin{align}
 (H\psi)(x)=(-\Delta \psi)(x)=(2\pi)^{-d/2}\int |\xi|^2\hat{\psi}(\xi)e^{i\xi\cdot x}\mathrm{d}\xi\; .
 \end{align}
-How can one evaluate this? The dynamics on $CAR(\mathcal{H})$ are given by $\tau_t(a^{\#}(\varphi))=a^{\#}(e^{-itH}\varphi)$. As one does per usual one takes the well understood finite case $f(-\Delta_L)$ which converges to $f(-\Delta)$ strongly for any bounded, continuous function f. This applies to $e^{-itx}$, $e^{-\beta x}$, $Ze^{-\beta x}(1+Ze^{-\beta x})^{-1} (\text{for }x>0)$.
+How can one evaluate this? The dynamics on $CAR(\mathcal{H})$ are given by $\tau_t(a^{\#}(\varphi))=a^{\#}(e^{-itH}\varphi)$. As per usual, one takes the well understood finite case $f(-\Delta_L)$ which converges to $f(-\Delta)$ strongly for any bounded, continuous function f. This applies to $e^{-itx}$, $e^{-\beta x}$, $Ze^{-\beta x}(1+Ze^{-\beta x})^{-1} (\text{for }x>0)$.
 \begin{theorem}
 	Let $\omega_{\beta,\mu}^2$ be the Gibbs state associated to $H_L=-\Delta_L$ on $CAR(\mathcal{H}_L)$. Then \begin{align*}
 	\omega_{\beta,\mu}^L(A)\overset{}{\longrightarrow}\omega_{\beta,\mu}(A) \qquad (L\rightarrow \infty)\; ,
@@ -432,7 +433,8 @@ How can one evaluate this? The dynamics on $CAR(\mathcal{H})$ are given by $\tau
 	\end{align}
 \end{theorem}
 \begin{proof}
-	It suffices to prove the statement for the two-point function. But this follows from the weak convergence of \begin{align}
+We can limit ourselves to $\varphi,\psi\in C_c^{\infty}(\mathbb{R}^d)$, since $\mathrm{CAR}(C_C^{\infty})$ is equal to $\mathrm{CAR}(L^2(\mathbb{R}^d))$ as $C_c^{\infty}(\mathbb{R^d})$ is dense in $L^2(\mathbb{R}^d)$.
+	It suffices to prove the statement for the two-point function, due to the above Proposition. But this follows from the weak convergence of \begin{align}
 	Ze^{-\beta(-\Delta_L)}(\mathds{1}+Ze^{-\beta(-\Delta_L)})\overset{w}{\longrightarrow}Ze^{-\beta(-\Delta)}\left(\mathds{1}+Ze^{-\beta(-\Delta)}\right)^{-1}\; ,
 	\end{align}
 	for a proof refer to exercise sheet 1.
@@ -444,24 +446,24 @@ How can one evaluate this? The dynamics on $CAR(\mathcal{H})$ are given by $\tau
 		 \varrho(\beta,\mu)&=\lim_{L\rightarrow\infty}L^{-d}\sum_{n\geq 1} \omega_{\beta,\mu}^L(\underbrace{a^{\dagger}(\psi_n)a(\psi_n)}_{\mathcal{N}})\\
 		 &=(2\pi)^{d/2}\int \frac{Ze^{-\beta}|\xi|^2}{1+Ze^{-\beta|\xi|^2}}\mathrm{d}\xi\; ,
 		 \end{align}
-		 where $(\psi_n)_{n\in\mathcal{N}}$ is a basis of $\mathcal{H}_L$. This means that the momentum density distribution \begin{align}
+		 where $(\psi_n)_{n\in\mathcal{N}}$ is any basis of $L^2(\Lambda_L)$. This means that the momentum density distribution of the Fermi-gas is given by\begin{align}
 		 0\leq \frac{Ze^{-\beta|\xi|^2}}{1+Ze^{-\beta|\xi|^2}}\leq 1\; ,
 		 \end{align}
 		 and its limit as $\beta\rightarrow\infty$ (i.e. $T\rightarrow 0$) \begin{align}
 		 \lim_{\beta\rightarrow \infty}\frac{1}{1+e^{\beta(|\xi|^2-\mu)}}=\begin{cases}
 		 0 :& \text{ if }|\xi|^2 > \mu\\
 		 1 :& \text{ if }|\xi|^2< \mu \; .
-		 \end{cases}
+		 \end{cases}\label{eqn::limit_of_fermi_density}
 		 \end{align}
 		 This is illustrated in Fig. \ref{fermidirac}. \begin{figure}\centering
 		 	\includegraphics[scale=1]{fermidirac.pdf}
 		 	\caption{Fermi-Dirac distribution [stolen; By Krishnavedala - Own work, CC BY-SA 3.0, \texttt{https://commons.wikimedia.org/w/index.php?curid=15478733}]\label{fermidirac}.}
 		 \end{figure}
-	 \item $\omega_{\beta,\mu}$ having an infinite number of particles cannot be given by a vector or density matrix in $\mathcal{F}_a(L^2(\mathbb{R}^d))$. There is the famous Araki-Wyss representation associated to $\omega_{\beta,\mu}$, namely to $\varrho=\frac{Ze^{-\beta H}}{\mathds{1}+Ze^{-\beta H}}$. \begin{align}
+	 \item $\omega_{\beta,\mu}$ having finite density with infinite number of particles cannot be given by a vector or density matrix in $\mathcal{F}_a(L^2(\mathbb{R}^d))$. There is the famous Araki-Wyss representation associated to $\omega_{\beta,\mu}$, namely to $\varrho=\frac{Ze^{-\beta H}}{\mathds{1}+Ze^{-\beta H}}$. \begin{align}
 	 H_{\varrho}=\mathcal{F}_a (\mathcal{H}) \otimes \mathcal{F}_a(\mathcal{H}) \qquad \Omega_{\varrho}=\Omega\otimes\Omega \\
 	 \pi(a^*(\varphi))=b^*(\sqrt{1-\varrho}\varphi)\otimes \mathds{1}+(-\mathds{1})^{\mathcal{N}}\otimes b(\sqrt{\varrho}\varphi)\; .
 	 \end{align}
-	 If the density is a projection, i.e. $\varrho=\varrho^2$ (for us that means $\beta=\infty$, as is clearly visible in Fig. \ref{fermidirac}., then the two Fock-spaces have the interpretation: $\text{particles}\otimes\text{antiparticles}$. Check ($\mathcal{H}_\varrho,\Omega_{\varrho},T_{\varrho}$) is the GNS representation of $\omega_{\beta,\mu}$: \begin{align}
+	 If the density is a projection, i.e. $\varrho=\varrho^2$ (at $\beta=\infty$, see Eq. \eqref{eqn::limit_of_fermi_density}), then the two Fock-spaces have the interpretation: $\text{particles}\otimes\text{antiparticles}$. Check ($\mathcal{H}_\varrho,\Omega_{\varrho},T_{\varrho}$) is the GNS representation of $\omega_{\beta,\mu}$: \begin{align}
 	 \langle \Omega_{\varrho},\pi_{\varrho}(a^*(\varphi)a(\varphi))\Omega_{\varrho}\rangle&=\langle \Omega\otimes \Omega,\left((-\mathds{1})^{\mathcal{N}}\otimes b(\sqrt{\varrho}\varphi)\right)\left((-\mathds{1})^{\mathcal{N}}\otimes b^*(\sqrt{\varrho}\psi)\right)\Omega\otimes \Omega)\\
 	 &=\langle \Omega,b(\sqrt{\varrho}\varphi)b^*(\sqrt{\varrho}\psi)\Omega\rangle\\
 	 &=\langle \sqrt{\varrho}\psi,\sqrt{\varrho}\varphi\rangle+\langle \Omega ,b^*(\sqrt{\varrho}\psi)b(\sqrt{\varrho}\varphi)\Omega\rangle\\
@@ -470,17 +472,17 @@ How can one evaluate this? The dynamics on $CAR(\mathcal{H})$ are given by $\tau
 	\end{itemize}
 \end{remarks}
 \section{Bosons}
-The main difference to Fermions is that $b(\varphi),b^*(\psi)$ are unbounded on Fock space so they cannot generate a $C^*$-algebra. But $\Phi(\psi):=\frac{1}{\sqrt{2}}(b(\psi)+b^*(\psi))$ can be realised as a self-adjoined operator on $\mathcal{F}_s(\mathcal{H})$, and hence \begin{align}
+Unlike in the fermionic case, the bosonic $b^{\#}(\varphi)$ are unbounded operators on Fock space and cannot represent a $C^*$-algebra. But $\Phi(\psi):=\frac{1}{\sqrt{2}}(b(\psi)+b^*(\psi))$ has a self-adjoint extension on $\mathcal{F}_s(\mathcal{H})$ and by Stone's theorem \begin{align}
 W(t\psi):=\exp(it\Phi(\psi))\qquad (t\in\mathbb{R})\; ,
 \end{align}
-is a strongly continuous group of unitary operators. if $\mathcal{H}$ is a separable Hilbert space, the Weyl algebra $CCR(\mathcal{H})$ is the $C^*$-algebra generated by $\{W(\psi),\psi\in\mathcal{H}\}$ such that \begin{itemize}
+is a strongly continuous group of unitary operators. If $\mathcal{H}$ is a separable Hilbert space, the Weyl algebra $CCR(\mathcal{H})$ is the $C^*$-algebra generated by $\{W(\psi),\psi\in\mathcal{H}\}$ such that \begin{itemize}
 	\item $W(\psi)=W(-\psi)^*$.
 	\item $W(\varphi)W(\psi)=e^{-\frac{i}{2}\mathrm{Im}(\langle\varphi,\psi\rangle)}W(\varphi+\psi)$.
 \end{itemize}
 \begin{remarks}
 	There are some remarks, mostly analogous to the Fermion case, to be made \begin{itemize}
 		\item Again: $CCR(\mathcal{H})$ is unique up to $*$-isomorphisms.
-		\item Here if $h$ is a pre-Hilbert space, with $\overline{h}=\mathcal{H}$. Then $CCR(h)=CCR(\mathcal{H})$ iff $h=\mathcal{H}$.
+		\item Here, if $h$ is a pre-Hilbert space, with $\overline{h}=\mathcal{H}$. Then $CCR(h)=CCR(\mathcal{H})$ iff $h=\mathcal{H}$.
 		\item $W(0)=\mathds{1}$, $W(\psi)$ is unitary for all $\psi\in\mathcal{H}$.
 		\item $\|W(\psi)-\mathds{1}\|=2$ for all $\psi\neq 0$ i.e. \underline{no} norm continuity in $\psi\mapsto W(\psi)$.
 		\item The map $\psi\mapsto W(\psi)$ is called the \underline{Weyl quantization}.
@@ -489,38 +491,47 @@ is a strongly continuous group of unitary operators. if $\mathcal{H}$ is a separ
 The finite volume thermal Gibbs state is again given by \begin{align}
 \omega_{\beta,\mu}(A)=Z^{-1}_{\beta,\mu}\mathrm{Tr}_{\mathcal{F}_s(\mathcal{H})}(e^{-\beta K_{\mu}}A)\qquad Z_{\beta,\mu}=\mathrm{Tr}(e^{-\beta K_{\mu}}) \label{eqn::symm_gibbs}\; ,
 \end{align}
-where $K_{\mu}=\mathrm{d}\Gamma(H)-\mu\mathcal{N}$ on $CCR(\mathcal{H}_1)$, $\Lambda\subset\mathbb{R}^3$ whenever $e^{-\beta K_{\mu}}\in I_1(\mathcal{F}_s(\mathcal{H}))$.
+where $K_{\mu}=\mathrm{d}\Gamma(H)-\mu\mathcal{N}$, on $CCR(\mathcal{H}_{\Lambda})$, $\Lambda\subset\mathbb{R}^d$, whenever $e^{-\beta K_{\mu}}\in I_1(\mathcal{F}_s(\mathcal{H}))$ (i.e. trace class).
 \begin{lemma}
 	$\exp(-\beta H)\in I_1(\mathcal{H})$ and $(H-\mu)>0$ (lower bound on the Hamiltonian) iff $\exp(-\beta K_{\mu})\in I_1(\mathcal{F}_s(\mathcal{H}))$.
 \end{lemma}
+\begin{remarks}
+This basically means that for bosons the Gibbs state exists only for those chemical potentials $\mu\in\mathbb{R}$ such that $H-\mu>0$.
+\end{remarks}
 \begin{notes}
 	$b^*(\varphi)b(\psi)$ is unbounded so $\mathrm{Tr}(e^{-\beta K_{\mu}}b^*(\varphi)b(\psi))$ is ''open to interpretation''.\\
-	\underline{Formally} one would like to analyze the operator $\mathrm{Tr}\left( e^{-\frac{\beta K_{\mu}}{2}}b^*(\varphi)b(\psi)e^{-\frac{\beta K_{\mu}}{2}}\right)$, since one can prove that $b(\psi_1)\cdots b(\psi_n)e^{-\frac{\beta K_{\mu}}{2}}$ has a bounded, Hilbert-Schmidt closure which allows for the definition of \begin{align}
+	\underline{Formally} one would like to analyze the operator $\mathrm{Tr}\left( e^{-\frac{\beta K_{\mu}}{2}}b^*(\varphi)b(\psi)e^{-\frac{\beta K_{\mu}}{2}}\right)$, since one can prove that $b(\psi_1)\cdots b(\psi_n)e^{-\beta K_{\mu}}$ has a bounded, Hilbert-Schmidt closure which allows for the definition of \begin{align}
 		\omega_{\beta,\mu}(b^*(\psi_1)\cdots b^*(\psi_n)&b(\varphi_m)\cdots b(\varphi_1))=\frac{1}{Z_{\mu,\beta}}\cdot \\ &\cdot \mathrm{Tr}\left(e^{-\frac{\beta K_{\mu}}{2}}b^*(\psi_1)\cdots b^*(\psi_n)b(\varphi_m)\cdots b(\varphi_1)e^{-\frac{\beta K_{\mu}}{2}}\right)\; ,
 	\end{align}
-	but one cannot use the cyclicity of the trace as we are dealing with unbounded operators (why that is, just imagine quantum mechanics with the momentum and space operator, if one could use cyclicity of the trace the commutator would be zero, while it really is unbounded).
+	but one cannot use the cyclicity of the trace as we are dealing with unbounded operators (why that is, just imagine quantum mechanics with the momentum and space operator, if one could use cyclicity of the trace the commutator would be zero, while it really is unbounded). So to be a bit more precise: The bosonic $b(\varphi)b^*(\psi)$ are unbounded, so that it is a priori unclear if $\mathrm{Tr}(e^{-\beta K_{\mu}}b^*(\psi_1)\cdots b^*(\psi_n)b(\varphi_m)\cdots b(\varphi_1))$ is well-defined. In fact, it is not. However, it is \underline{formally} equal to \begin{align}\mathrm{Tr}\left(e^{-\frac{\beta K_{\mu}}{2}}b^*(\psi_1)\cdots b^*(\psi_n)b(\varphi_m)\cdots b(\varphi_1)e^{-\frac{\beta K_{\mu}}{2}}\right)\end{align}\; ,
 \end{notes}
-Analogously to the Fermion case we have again \begin{align}
+giving us the following lemma which will be proven in the exercises \begin{lemma}
+Let $\Phi=(\varphi_1,\ldots,\varphi_m)$ and $B(\Phi):=b(\varphi_m)\cdots b(\varphi_1)e^{-\frac{\beta}{2}K_{\mu}}$. Then $B(\Phi)$ is closeable with bounded closure and $B(\Phi)\in I_2(\mathcal{F}(\mathcal{H}))$.\end{lemma}
+IT follows that for $\Psi=(\psi_1,\ldots,\psi_n)$, $\Phi=(\varphi_1,\ldots,\varphi_m)$, $B(\Psi)^*B(\Phi)\in I_1(\mathcal{F}_s(\mathcal{H}))$ and we \underline{define}\begin{align}
+\omega_{\beta,\mu}(b^*(\psi_1)\cdots b^*(\psi_n)b(\varphi_m)\cdots b(\varphi_1)):=\mathrm{Tr}(B(\Psi)^*B(\Phi))\;.
+\end{align}
+But this was just for details, for anything calculation related just use the above definition, combined with the relation\begin{align}
 e^{-\frac{\beta K_{\mu}}{2}}b^*(\varphi)=b^*(e^{-\frac{\beta }{2}(H-\mu)}\varphi)e^{-\frac{\beta K_{\mu}}{2}}\; .\label{eqn::boson_relation}
-\end{align}Now the analogous proposition for the density distribution:
-\begin{prop} Let $0<\beta<\infty$, $\mu\in\mathbb{R}$ and $H=H^2$ such that $H-\mu>0$ and $e^{-\beta H}\in \mathcal{I_1(\mathcal{H})}$. Then \begin{align}
+\end{align} we can now formulate the proposition for the density distribution of the bosonic case
+\begin{prop} Let $0<\beta<\infty$, $\mu\in\mathbb{R}$ and $H=H^{\dagger}$ such that $H-\mu>0$ and $e^{-\beta H}\in \mathcal{I_1(\mathcal{H})}$. Then \begin{align}
 \omega_{\beta,\mu}(b^*(\varphi)b(\psi))&=\left\langle\psi, \frac{e^{-\beta(H-\mu)}}{1-e^{-\beta(H-\mu)}}\varphi\right\rangle\\
 \omega_{\beta,\mu}(b^*(\varphi))&=0=\omega_{\beta,\mu}(b(\varphi))\; .
 \end{align}
 \end{prop}
 \begin{notes}
-	$1-e^{-\beta(H-\mu)}$ is invertible since $H-\mu>0$ implies $e^{-\beta(H-\mu)}<\mathds{1}$.
+	$1-e^{-\beta(H-\mu)}$ is invertible since $H-\mu>0$ implies $e^{-\beta(H-\mu)}<\mathds{1}$ and hence $\mathrm{Ker}(\mathds{1}-ze^{-\beta H})=\{0\}$.
 \end{notes}
 \begin{proof}
 	The calculation is harder than in the Fermion case since we cannot use the cyclic properties of the trace. We have to commute our way to the goal \begin{align}
 	\omega_{\beta,\mu}(b^*(\varphi)b(\psi))\overset{\eqref{eqn::boson_relation}}{=}&Z_{\beta,\mu}^{-1}\mathrm{Tr}\left(b^*(e^{-\frac{\beta}{2}(H-\mu)}\varphi)e^{-\beta K_{\mu}}b(e^{-\beta \frac{H-\mu}{2}}\psi)\right)\\
-	=~~&\omega_{\beta,\mu}(b(e^{-\frac{\beta}{2}(H-\mu)}\varphi)b^*(e^{-\frac{\beta}{2}(H-\mu)}\psi)+\langle \psi, e^{-\beta (H-\mu)} \varphi\rangle\; .
+	=~~&\omega_{\beta,\mu}(b(e^{-\frac{\beta}{2}(H-\mu)}\varphi)b^*(e^{-\frac{\beta}{2}(H-\mu)}\psi))\mid \text{use CCR}\\
+	=~~&\omega_{\beta,\mu}(b^*(e^{-\frac{\beta}{2}(H-\mu)}\varphi)b(e^{-\frac{\beta}{2}(H-\mu)}\psi))+\langle \psi, e^{-\beta (H-\mu)} \varphi\rangle\; .
 	\end{align}
 	Iterating this identity n-times gives \begin{align}
 	\omega_{\beta,\mu}(b^*(\varphi)b(\psi))=&\omega_{\beta,\mu}\left(b^*(e^{-n\frac{\beta}{2}(H-\mu)}\varphi)b(e^{-n\frac{\beta}{2}(H-\mu)}\psi)\right)\\
 	+&\sum_{j=1}^{n}\langle \psi, e^{-j\beta(H-\mu)}\varphi\rangle\; .
 	\end{align}
-	Since $H-\mu > C$ one has $\|e^{-n\frac{\beta}{2}(H-\mu)}\|\rightarrow 0$ as $n\rightarrow\infty$, and so does the term at the first summand above. For the second term we can use the Neumann series (i.e. the equivalent to the geometric series for operators) \begin{align}
+	Since $H-\mu > C$ one has $\|e^{-n\frac{\beta}{2}(H-\mu)}\|\rightarrow 0$ as $n\rightarrow\infty$. For the second term we can use the Neumann series (i.e. the equivalent to the geometric series for operators) \begin{align}
 	\sum_{j=1}^n\left(e^{-\beta(H-\mu)}\right)^j\rightarrow \left(\mathds{1}-e^{-\beta(H-\mu)}\right)^{-1}\left(e^{-\beta(H-\mu)}\right)\; .
 	\end{align}
 	The rest of the proposition follows as for fermions. 
@@ -531,16 +542,17 @@ e^{-\frac{\beta K_{\mu}}{2}}b^*(\varphi)=b^*(e^{-\frac{\beta }{2}(H-\mu)}\varphi
 	Now the thermodynamic limit: If $H-\mu\geq C > 0$ uniformly in the volume, then the limit $L\rightarrow \infty$ can be taken as in the fermionic case. As a regular example take $\mathcal{H}_L=L^2\left(\left[-\frac{L}{2},\frac{L}{2}\right]^d\right)$, $H_L$ Dirichlet Laplacian with Eigenvalues $E_{\underline{n}}(L)=\frac{\pi^2}{L^2}(n_1^2+\cdots+n_d^2)$ whereby $\underline{n}\in \mathbb{N}^d$ and ground state energy \begin{align}
 	E_{\underline{1}}(L)=\frac{\pi^2}{L^2}\rightarrow 0 \qquad (L\rightarrow \infty)\; .
 	\end{align}
+	Let $\mu<0$, so that $0<z=\exp(\beta \mu)<1$ and $H_L-\mu>-\mu>0$.
 	\begin{theorem}
 		$0<\beta<\infty$, $\mu<0$ and let $\omega_{\beta,\mu}^L$ be the Gibbs state over $CCR(\mathcal{H}_L)$, associated to $H_L$. Then \begin{align}
 		\lim_{L\rightarrow\infty}\omega_{\beta,\mu}^L(A)=\omega_{\beta,\mu}(A)
 		\end{align}
-		for any $A\in CCR(\mathcal{H}_{L'})$ and any $L'$, where $\omega_{\beta,\mu}$ is the state on the $CCR(\mathcal{H})$ with two-point functions \begin{align}
+		for any $A\in CCR(\mathcal{H}_{L})$ and any $L$, where $\omega_{\beta,\mu}$ is the state on the $CCR(\mathcal{H})$ with two-point functions \begin{align}
 		\omega_{\beta,\mu}(b^*(\varphi)b(\psi))=\frac{1}{(2\pi)^{d/2}}\int \overline{\hat{\psi}}(\xi)\frac{e^{-\beta(|\xi|^2-\mu)}}{1-e^{-\beta(|\xi|^2-\mu)}}\hat{\varphi}(\xi)\mathrm{d}\xi\; .
 		\end{align}
 	\end{theorem}
 \begin{proof}
-	It suffices to check the convergences on Weyl-operators. Bu tthe positive function \begin{align}
+	Since the Weyl operators generate the whole algebra, it suffices to check the convergences on Weyl-operators $\omega_{\beta,\mu}^L(W(\psi))$. Bu the positive function \begin{align}
 	x\mapsto \frac{1+e^{-\beta(x-\mu)}}{1-e^{-\beta(x-\mu)}}\qquad (x\geq \mu+C>\mu)
 	\end{align}
 	is bounded so that \begin{align}
@@ -554,26 +566,38 @@ The finite volume density \begin{align}
 \varrho_L(\beta,\mu)&=L^{-d}\sum_{\underline{n}}\omega_{\beta,\mu}^L(b^*(\psi_{\underline{n}})b(\psi_{\underline{n}}))\\
 &=L^{-d}\sum_{\underline{n}}\frac{e^{-\beta(E_{\underline{n}(L)-\mu})}}{1-e^{-\beta(E_{\underline{n}}(L)-\mu)}}\; ,
 \end{align}
-is a monotone functoin of $\mu$, at fixed $\beta, L$, and since $\varrho_L(\beta,\mu)\rightarrow\infty$ as $\mu\rightarrow E_{\underline{n}}(L)$, its range is all $(0,\infty)$, so any density can be reached by choosing $\mu\in(-\infty,E_1(L))$. But this is not true in the TDL if $d\geq 3$. There the density is given by \begin{align}
-\varrho(\beta, Z)=\frac{1}{(2\pi)^{d/2}}\int \frac{e^{-\beta(|\xi|^2-\mu)}}{1-e^{-\beta(|\xi|^2-\mu)}}\mathrm{d}\xi \quad\text{ with }\quad Z=e^{\beta\mu}\;,
+is a monotone function of $\mu$, at fixed $\beta, L$, and since $\varrho_L(\beta,\mu)\rightarrow\infty$ as $\mu\rightarrow E_{\underline{1}}(L)$, its range is all $(0,\infty)$, so any density can be reached by choosing $\mu\in(-\infty,E_1(L))$. But this is not true if the TDL is taken first in $d\geq 3$ (which is of course the right order of limits). There the density is given by \begin{align}
+\varrho(\beta, z)=\frac{1}{(2\pi)^{d/2}} \int \frac{e^{-\beta(|\xi|^2-\mu)}}{1-e^{-\beta(|\xi|^2-\mu)}}\mathrm{d}\xi \quad\text{ with }\quad Z=e^{\beta\mu}\;,
 \end{align}
-at $\mu=0$, the integrand scales like $|\xi|^{-2}$, which is integrable if $d\geq 3$. Natural question: How can a density $\overline{\varrho}>\varrho_C(\beta)=\varrho(\beta,1)$ be obtained in the infinite volume limit? The short answer is that the excess density $\overline{\varrho}-\varrho_C(\beta)$ condensates into the ground state $\Rightarrow$ \underline{Bose-Einstein-condensation}.
+at $\mu=0$, the integrand scales like $|\xi|^{-2}$, which is integrable if $d\geq 3$. Natural question: How can a density 
+\begin{align}
+\overline{\varrho}>\varrho_C(\beta)=\varrho(\beta,1)=\frac{1}{(2\pi)^{d/2}}\int \frac{e^{- \beta |\xi|^2}}{1-e^{-\beta |\xi|^2}}\mathrm{d}\xi
+\end{align} be obtained in the infinite volume limit? The short answer is that the excess density $\overline{\varrho}-\varrho_C(\beta)$ condensates into the ground state $\Rightarrow$ \underline{Bose-Einstein-condensation}.
 First take periodic boundary conditions (for simplicity) and \begin{align}
-Z(L)=1-\frac{1}{(\varrho_0L^d)}\; .
+z(L)=1-\frac{1}{(\varrho_0L^d)}\; .
 \end{align}
 Number of particles in the ground state \begin{align}
-\mathcal{N}_{0,L}(\beta)&=\omega_{\beta,\mu}^L(b^*(\psi_0)b(\psi_0))\mid \text{use }E_0(L)=0\\&=\frac{Z(L)}{1-Z(L)}=\varrho_0 L^d-1\; ,\label{eqn::relation_nz}
+\mathcal{N}_{0,L}(\beta)&=\omega_{\beta,\mu}^L(b^*(\psi_0)b(\psi_0))\mid \text{use }E_0(L)=0\\&=\frac{z(L)}{1-z(L)}=\varrho_0 L^d-1\; ,\label{eqn::relation_nz}
 \end{align}
 so the density is constant. For non-ground states one finds ($\underline{n}\neq 0$) \begin{align}
-\mathcal{N}_{\underline{n},L}(\beta)=(Z(L)^{-1}e^{\beta E_{\underline{n}}(L)}-1)^{-1}\leq (\beta E_{\underline{n}}(L))^{-1}\leq \mathrm{const. }~L^2\; .
+\mathcal{N}_{\underline{n},L}(\beta)=(z(L)^{-1}e^{\beta E_{\underline{n}}(L)}-1)^{-1}\leq (\beta E_{\underline{n}}(L))^{-1}\leq \mathrm{const. }~L^2\; .
 \end{align}
-Hence: If $d=3$, the ground state $\psi_0$ is the only macroscopically occupied state (i.e. $\mathcal{N}_{0,L}(\beta)\sim L^3$). Precisely this means that $k=k(\underline{n})=\frac{4\pi^2}{L^2}(n_1^2+n_2^2+n_3^2)$. For any $\varphi\in C_c^{\infty}(\mathbb{R}^3)$ one then finds \begin{align}
+Hence: If $d=3$, the ground state $\psi_0$ is the only macroscopically occupied state (i.e. $\mathcal{N}_{0,L}(\beta)\sim L^3$). Precisely this means: Let $k=k(\underline{n})=\frac{4\pi^2}{L^2}(n_1^2+n_2^2+n_3^2)$. For any $\varphi\in C_c^{\infty}(\mathbb{R}^3)$ one then finds \begin{align}
 L^{-3}\sum_{\underline{n}}\mathcal{N}_{k(\underline{n}),L}(\beta)\varphi(k(\underline{n}))\rightarrow \int \mathcal{N}_s(\beta,\xi)\varphi(\xi)\mathrm{d}\xi\; ,
 \end{align}
-where  \begin{align}\mathcal{N}_s(\beta,\xi)&=\overline{\mathcal{N}}(\beta,\xi)+\varrho_0 \delta \\
+where  \begin{align}\mathcal{N}_s(\beta,\xi)&=\overline{\mathcal{N}}(\beta,\xi)+\varrho_0 \delta(\xi) \\
 \overline{\mathcal{N}}(\beta,\xi)&=(2\pi)^{-3}\frac{e^{-\beta|\xi|^2}}{1-e^{-\beta|\xi|^2}}\; .
 \end{align}
-Now this has been the easy discussion. Let us review some material and then tackle Bose-Einstein-condensation mathematically more rigorously. On the $CCRf(\mathcal{H})$-algebra one has for the states \begin{align}
+Indeed, for any $\underline{n}\neq 0$: \begin{align}
+\mathcal{N}_{\underline{n},L}(\beta)-(2\pi)^3\overline{\mathcal{N}}(\beta, k(\underline{n}))=(1-z^{-1}))e^{\beta E_{\underline{n}(L)}}\mathcal{N}_{\underline{k},L}(\beta)\overline{\mathcal{N}}(\beta,k(\underline{n}))(2\pi)^3
+\end{align}
+since $E_{\underline{n}}(L)=|k(\underline{n})|^2$. But $e^{\beta E_{\underline{n}}}\mathcal{N}_{k(\underline{n}),L}(\beta)\leq \mathrm{const.~}L^2$ so that \begin{align}
+L^{-3}\sum_{\underline{n}\neq 0} \left|\mathcal{N}_{\underline{n},L}(\beta)-(2\pi)^3\overline{\overline{\mathcal{N}}}\right| \leq \frac{1}{\varrho_0 L^3}\mathrm{const.}L^3 \left(\left(\frac{2\pi}{L}\right)^3\sum_{\underline{n}\neq 0}\overline{\mathcal{N}}(\beta,k(\underline{n})\right)\;,
+\end{align}
+and the second factor is bounded above by $\int\overline{\mathcal{N}}(\beta,\xi)\mathrm{d}\xi$ which is finite in $d=3$, which conludes the argument. In terms of densities \begin{align}
+\varrho_L(\beta,z(L))\rightarrow \varrho_0(\beta)=\varrho_C(\beta)+\varrho_0
+\end{align}
+Now this has been the easy discussion. Let us review some material and then tackle Bose-Einstein-condensation mathematically more rigorously. On the $CCR(\mathcal{H})$-algebra one has for the states \begin{align}
 W(\psi)W(\varphi)=e^{\frac{i}{2}\mathrm{Im}\langle\psi,\varphi\rangle}W(\psi+\phi)\; ,\end{align}
 which, on Fock spaces, translates to \begin{align}
 W_{\mathcal{F}}(\psi)=e^{\frac{i}{\sqrt{2}}(b^{\dagger}(\psi)+b(\psi))}\;.
@@ -590,7 +614,7 @@ where $(H\psi)(x)=(2\pi)^{-d/2}\int\hat{\psi}(\xi)|\xi|^2\mathrm{d}\xi$. For the
 in finite volume the integral discretizes again and one obtains (with the counter for the multidimensional Eigenstate indices $\underline{n}$)\begin{align}
 \varrho_{L}(\beta,Z)=\frac{1}{L^d}\sum_{\underline{n}}\frac{e^{-\beta(E_{\underline{n}}(L)-\mu)}}{\mathds{1}-e^{-\beta(E_{\underline{n}}(L)-\mu)}}\; ,
 \end{align}
-which, again, diverges as $\mu$ goes towards the bottom of the spectrum. We see (again) there is a difference in the order of limit taking. Let us look again at the periodic boundary conditions in the scaling limit, i.e. \begin{align}
+which diverges as $\mu$ goes towards the bottom of the spectrum. We confirm a second time that there is a difference in the order of limit taking. Let us look again at the periodic boundary conditions in the scaling limit, i.e. \begin{align}
 Z(L)=1-\frac{1}{\varrho L^d}\; ,
 \end{align}
 using the previously found Eq. \eqref{eqn::relation_nz} we have \begin{align}
@@ -666,7 +690,7 @@ GNS representatoin: $\omega_{\beta}$ at $\overline{\varrho}>\varrho_C(\beta):(\m
 (\mu\psi)(x)&=\frac{1}{(2\pi)^3}\int\frac{e^{-\beta|\xi|^2}}{1-e^{-\beta|\xi|^2}\overline{\psi}(\xi)e^{i\xi x}}\mathrm{d}x \qquad \text{''Araki-woods''}\;.
 \end{align}
  \section{KMS states}
- We are now going to discuss the existence and uniqueness of equilibrium states in quantum statistical ensembles in a bit more details. For the first part of this section we are going to set $\dim\mathcal{H}<\infty$, i.e. $\mathcal{H}=\mathbb{C}^n$, $\mathcal{A}=M_n(\mathbb{C})$. State: Given by $A\mapsto\mathrm{Tr}(\varrho A)$ with $0\leq \varrho\leq \varrho^*\leq \mathds{1}$ with $\mathrm{Tr}(\varrho)=1$. Dynamics are given by $\tau_t(A)=e^{itH}Ae^{-itH}$.\\
+ We are now going to discuss the existence and uniqueness of equilibrium states in quantum statistical ensembles in a bit more detail. For the first part of this section we are going to set $\dim\mathcal{H}<\infty$, i.e. $\mathcal{H}=\mathbb{C}^n$, $\mathcal{A}=M_n(\mathbb{C})$. State: Given by $A\mapsto\mathrm{Tr}(\varrho A)$ with $0\leq \varrho\leq \varrho^*\leq \mathds{1}$ with $\mathrm{Tr}(\varrho)=1$. Dynamics are given by $\tau_t(A)=e^{itH}Ae^{-itH}$.\\
  {\centering\fbox{\parbox{0.8\linewidth}{\textbf{Gibbs variational principle:} Among all states, the equilibrium state(s) are minimizers of the free energy. }}\par}
  In the present case the free energy is given by \begin{align}
  \mathcal{F}_{\beta}:\mathcal{E}(\mathcal{A})&\longrightarrow \mathbb{R}\\
@@ -679,7 +703,7 @@ GNS representatoin: $\omega_{\beta}$ at $\overline{\varrho}>\varrho_C(\beta):(\m
 	There exists exactly one minimizer of the free energy $\varrho_{\beta}=Z_{\beta}^{-1}e^{-\beta H}$ with $Z_{\beta}=\mathrm{Tr}(e^{-\beta H})$ and $F_{\beta}(\varrho_{\beta})=:f_{\beta}=-\beta^{-1}\log Z_{\beta}$.
 \end{prop}
 \begin{lemma}
-	$0\leq A,B\leq \mathds{1}$, density matrices with $\ker B\subset \ker A$, then \begin{align}
+	Let $0\leq A,B\leq \mathds{1}$, density matrices with $\ker B\subset \ker A$, then \begin{align}
 	\mathrm{Tr}(A(\log A-\log B))\geq \frac{1}{2}\mathrm{Tr}(A-B)^2\; .
 	\end{align}
 \end{lemma}
@@ -709,14 +733,14 @@ GNS representatoin: $\omega_{\beta}$ at $\overline{\varrho}>\varrho_C(\beta):(\m
 	\end{align}
 
 Since $(A-\varrho_{\beta})^2=(A-\varrho_{\beta})^*(A-\varrho_{\beta})\geq 0$, so that $\varrho_{\beta}$ is a minimizer of $\mathcal{F}_{\beta}$. Furthermore, $\mathrm{Tr}((A-\varrho_{\beta})^*(A-\varrho_{\beta}))=0$ implies $A=\varrho_{\beta}$, so that $\varrho_{\beta}$ is the unique minimizer.\end{proof}
-$H$ is a matrix, so that $\tau_t(A)=e^{itH}Ae^{-itH}$ has an analytic extension $\tau_z(A)$ for all $z\in\mathbb{C}$. One has the following proposition \begin{prop}
+Let $H$ be a matrix, so that $\tau_t(A)=e^{itH}Ae^{-itH}$ has an analytic extension $\tau_z(A)$ for all $z\in\mathbb{C}$. One has the following proposition \begin{prop}
 	The Gibbs state is the unique state satisfying the $(\tau,\beta)-$KMS conditions \begin{align}
 	\omega(A\tau_{i\beta}(B))=\omega(BA) \label{eqn::KMS_condition}\; .
 	\end{align}
 \end{prop}
 \begin{proof}
 	\begin{itemize}
-		\item $\mathrm{Tr}(e^{-\beta H}Ae^{itH}Be^{-itH})\mid_{t=i\beta}=\mathrm{tr}(e^{-\beta H}BA).$
+		\item $\mathrm{Tr}(e^{-\beta H}Ae^{itH}Be^{-itH})\mid_{t=i\beta}=\mathrm{tr}(e^{-\beta H}BA)$ by cyclicity.
 		\item Let $(\psi_i)_i$ be an eigenbasis of $H$, with eigenvalues $E_i$. Check the KMS-conditions \eqref{eqn::KMS_condition} for\begin{align}
 		A=\langle \psi_j,\cdot\rangle\psi_i&=|\psi_i\rangle\langle\psi_j|\\
 		B=\langle\psi_j,\cdot\rangle\psi_k&=|\psi_k\rangle\langle\psi| \; .
@@ -738,7 +762,7 @@ $H$ is a matrix, so that $\tau_t(A)=e^{itH}Ae^{-itH}$ has an analytic extension 
 	\end{align}
 \end{definition}
 \begin{remarks}
-	For Gibbs one has $\mathcal{F}_{\beta}(A,B,z)=\mathrm{Tr}(\varrho_{\beta}A\tau_t(\beta))$, which satisfies the boundary condition.
+	For Gibbs one has $\mathcal{F}_{\beta}(A,B,z)=\mathrm{Tr}(\varrho_{\beta}A\tau_t(B))$, which satisfies the boundary condition.
 \end{remarks}
 \begin{notes}
 	On $\mathcal{A}=\mathcal{M}_n(\mathbb{C})$, there is a unique $(\tau,\beta)-$KMS state. This is \textit{not true} in general, as illustrated by the Bose Gas in  the TDL. This non-uniqueness is a sign of phase-transition.
@@ -748,24 +772,27 @@ An $A\in\mathcal{A}$ is called analytic for $\tau$ if $t\mapsto \tau_t(\mathcal{
 	A state $\omega$ on $\mathcal{A}$ is a $(\tau,\beta)$-KMS state, if and only if there is a dense $\tau$-invariant, $*$ subalgebra of analytic elements for $\tau$, call it $\mathcal{A}_{\tau}$, such that $\omega(A\tau_{i\beta}(B))=\omega(BA)$ for all $A,B\in \mathcal{A}_{\tau}$.
 \end{theorem}
 \begin{proof}
-	$\Rightarrow$-direction: Let $A,B\in\mathcal{A}_{\tau}$, then  $G(A)=\omega(A\tau_z(B))$ is analytic in $z$ and $G(t)=\omega(A\tau_t(B))=\mathcal{F}_{\beta}(A,B,T),t\in\mathbb{R}$, which follows by the KMS-boundary conditions. Hence $z\mapsto G(z)-\mathcal{F}_{\beta}(A,B;z)$ is analytic in $S_{\beta}$ and continuous in $\overline{S}_{\beta}$ and it vanishes on $\mathbb{R}$. By the Schwarz reflection-theorem it can be extended to an analytic function on $\{z\in\mathbb{C}:|\mathrm{Im}z|<\beta\}$. Since it is equal to zero on $\mathbb{R}\subset \{z\in\mathbb{C}:|\mathrm{Im}~z|<\beta\}$, it vanishes everywhere and by continuity to $\{z\in\mathbb{C}||\mathrm{Im}z|\leq \beta\}$ it vanishes on the closed set as well. Hence \begin{align}
+	$\Rightarrow$-direction: Let $A,B$ be analytic, i.e. $A,B\in\mathcal{A}_{\tau}$, then  $G(z)=\omega(A\tau_z(B))$ is analytic in $z$ and $G(t)=\omega(A\tau_t(B))=\mathcal{F}_{\beta}(A,B,t),t\in\mathbb{R}$, which follows by the KMS-boundary conditions. Hence $z\mapsto G(z)-\mathcal{F}_{\beta}(A,B;z)$ is analytic in $S_{\beta}$ (which is only the disk with positive imaginary part) and continuous in $\overline{S}_{\beta}$ and it vanishes on $\mathbb{R}$. By the Schwarz reflection-theorem it can be extended to an analytic function on $\{z\in\mathbb{C}:|\mathrm{Im}z|<\beta\}$, which still vanishes on $\mathbb{R}\subset \{z\in\mathbb{C}:|\mathrm{Im}~z|<\beta\}$. Hence, it vanishes everywhere and by continuity to $\{z\in\mathbb{C}||\mathrm{Im}z|\leq \beta\}$ it vanishes on the closed set as well. Hence \begin{align}
 	G(i\beta)=\mathcal{F}_{\beta}(A,B,i\beta)=\omega(BA) \qquad \text{by KMS B.C.}\;,
 	\end{align}
 	which concludes, since $G(i\beta)=\omega(A\tau_{i\beta}(\beta))$.\\Now to the $\Leftarrow$-direction. Let $A,B\in\mathcal{A}_{\tau}$. We have that $\mathcal{F}(A,B,z):=\omega(A\tau_z(B))$ is analytic on $\mathbb{C}$ and \begin{align}
 	\mathcal{F}(A,B;t)&=\omega(A\tau_t(B))\\
-	\mathcal{F}(A,B;t+i\beta)&=\omega(A\tau_{i\beta}(\tau_t(B)))\overset{\eqref{eqn::KMS_condition}}{=}\omega(\tau_t(B))A\; ,
+	\mathcal{F}(A,B;t+i\beta)&=\omega(A\tau_{i\beta}(\tau_t(B)))\overset{ass.}{=}\omega(\tau_t(B)A)\; ,
 	\end{align}
 which are the KMS boundary conditions. This extends to all $A,B\in\mathcal{A}$ by density and a bit of complex analysis.\end{proof}
 We can now come to the first physical property, which serves as a first justification to see KMS states as the generalization of equilibrium states. \begin{prop}
-	If $\omega$ is a $(\tau,\beta)$-KMS state. Then $\omega\circ \tau_t=0$. I.e. the equilibrium state is constant in time.
+	If $\omega$ is a $(\tau,\beta)$-KMS state. Then $\omega\circ \tau_t=0$is constant in time.. I.e. the equilibrium state is invariant under time evolution.
 \end{prop}
 \begin{proof}
-	Let $A\in\mathcal{A}_{\tau}$. Then $g(z):=\omega(\tau_t)(A))$ is entire analytic and $g(z+i\beta)=\omega(\mathds{1}\tau_{i\beta}(\tau_z(A))=\omega(\tau_z(A)\mathds{1})=g(z)$. Hence: $g$ is periodic in the imaginary direction. Moreover \begin{align}
+	Let $A\in\mathcal{A}$ be analytic for $\tau$. Then $g(z):=\omega(\tau_z(A))$ is entire analytic and $g(z+i\beta)=\omega(\mathds{1}\tau_{i\beta}(\tau_z(A))=\omega(\tau_z(A)\mathds{1})=g(z)$. Hence: $g$ is periodic in the imaginary direction. Moreover \begin{align}
 	|g(t+i\alpha)|&\leq \|\tau_{t+i\alpha}(A)\|=\|\tau_{i\alpha}(A)\| \\
 	&\leq \sup\{\|\tau_{i\gamma}(A)\|:0\leq \gamma <\beta\} < \infty\; 
 	\end{align}
 	Hence, $g$ is entire analytic and bounded, and by the Liouville theorem $g$ is constant. This extends to all of $\mathcal{A}$ by density.
 \end{proof}
+\begin{notes}
+As a technical side note: There is always a dense set of analytic elements.
+\end{notes}
 Now usually checking the KMS-conditions is a bit of a hassle but luckily there is an equivalent nice condition: \begin{theorem}[Energy-Entropy-Balance inquality (EEB)]
 	A state $\omega$ over $\mathcal{A}$ is a $(\tau,\beta)-$KMS state iff\begin{align} -i\beta\omega(A^*\delta(A))\geq \omega(A^*A)\log \frac{\omega(A^*A)}{\omega(AA^*)}\end{align}
 	for all $A\in D(\delta)$.
@@ -783,33 +810,33 @@ Now usually checking the KMS-conditions is a bit of a hassle but luckily there i
 \begin{remarks}
 	If $\omega$ is a $\tau-$invariant state, namely $\omega\circ \tau_t=\omega$, then by the uniqueness of the GNS-representation there exists $H_{\omega}=H_{\omega}^*$ on $\mathcal{H}_{\omega}$ such that \begin{align}
 		H_{\omega}\Omega_{\omega}&=0\\
-		e^{itH_{\omega}}\Pi_{\Omega}(A)e^{-itH_{\omega}}&=\Pi_{\Omega}(\tau_t(A))\;,
+		e^{itH_{\omega}}\pi_{\omega}(A)e^{-itH_{\omega}}&=\pi_{\omega}(\tau_t(A))\;,
 		\end{align}
 		and we say that $\exp(itH_{\omega})\cdot \exp(-itH_{\omega})$ is the unitary implementation of $\tau_t$ in $\mathcal{H}_{\omega}$ (s. exercises). 
 \end{remarks}		
 \begin{remarks}
 	For $A\in\mathcal{A}$, we define two measures\begin{align}
-	\mu_A(\Delta)&:=\langle\Pi_{\omega}(A)\Omega_{\omega},P_{\omega}(\Delta)\Pi_{\omega}(A)\Omega_{\omega}\rangle \sqrt{2\pi}\\
-	\nu_A(\Delta)&:=\langle \Pi_{\omega}(A^*)\Omega_{\omega},P_{\omega}(-\Delta)\Pi_{\omega}(A^*)\Omega_{\omega}\rangle \sqrt{2\pi}	\; ,
+	\mu_A(\Delta)&:=\langle\pi_{\omega}(A)\Omega_{\omega},P_{\omega}(\Delta)\pi_{\omega}(A)\Omega_{\omega}\rangle \sqrt{2\pi}\\
+	\nu_A(\Delta)&:=\langle \pi_{\omega}(A^*)\Omega_{\omega},P_{\omega}(-\Delta)\pi_{\omega}(A^*)\Omega_{\omega}\rangle \sqrt{2\pi}	\; ,
 	\end{align}
 whereby $\Delta\subset\mathbb{R}$ is a Borel subset and $P_{\omega}$ is the projection valued measure of $H_{\omega}$, defined by \begin{align}
 H_{\omega}=\int\lambda \mathrm{d}P_{\omega}(\lambda)\; .
 \end{align}
-Let $\tau_f(\Delta)=\int_{\mathbb{R}}f(t)\tau_t(\Delta)\mathrm{d}t$ for entire functions $f$ that is the the Fourier transform of a test function in $C_c^{\infty}(\mathbb{R})$. Then \begin{align}
-\omega(A^*\tau_f(A))&=\langle \Omega_{\omega},\Pi_{\omega}(A)^*\Pi_{\omega}(\tau_t(A))\Omega_{\omega}\rangle f(t)\mathrm{d}t\\
-&=\int f(t)\langle \Pi_{\omega}(A)\Omega_{\omega},e^{itH_{\omega}}\Pi_{\omega}(A)\Omega_{\omega}\rangle\mathrm{d}t\\
-&=\int\int f(t)e^{it\lambda}\langle\Pi_{\omega}(A)\Omega_{\omega},\mathrm{d}P_{\omega}(\lambda)\Pi_{\omega}(A)\Omega_{\omega}\rangle\mathrm{d}t\\
+Let $\tau_f(\Delta)=\int_{\mathbb{R}}f(t)\tau_t(\Delta)\mathrm{d}t$ for entire functions $f$ that is the the Fourier transform of a test function in $C_c^{\infty}(\mathbb{R})$. Then using that $P_{\omega}$ is projection valued, i.e. that it will drop down from the exponential row, since its exponent are all equal (second to third row)\begin{align}
+\omega(A^*\tau_f(A))&=\int\langle \Omega_{\omega},\pi_{\omega}(A)^*\pi_{\omega}(\tau_t(A))\Omega_{\omega}\rangle f(t)\mathrm{d}t\\
+&=\int f(t)\langle \pi_{\omega}(A)\Omega_{\omega},e^{itH_{\omega}}\pi_{\omega}(A)\Omega_{\omega}\rangle\mathrm{d}t\\
+&=\int\int f(t)e^{it\lambda}\langle\pi_{\omega}(A)\Omega_{\omega},\mathrm{d}P_{\omega}(\lambda)\pi_{\omega}(A)\Omega_{\omega}\rangle\mathrm{d}t\\
 &=\int \check{f}(\lambda)\mathrm{d}\mu_{A}(\lambda)\;,
 \end{align}
 whereby $\check{\cdot}$ indicates Fourier transform. Similarly one has \begin{align}
-\omega(A\tau_f(A^*))&=\int \langle \Pi_{\Omega}(A^*)\Omega_{\omega},\mathrm{d}P_{\omega}(\lambda)\Pi_{\omega}(A^*)\Omega\rangle e^{-it\lambda}f(t)\mathrm{d}t\\
-&=\int \langle \Pi_{\omega}(A^*)\Omega_{\omega},\mathrm{d}P_{\omega}(\lambda) \Pi_{\omega}(A^*)\Omega_{\omega}\rangle\check{f}(-\lambda)\\
+\omega(A\tau_f(A^*))&=\int \langle \pi_{\Omega}(A^*)\Omega_{\omega},\mathrm{d}P_{\omega}(\lambda)\pi_{\omega}(A^*)\Omega\rangle e^{-it\lambda}f(t)\mathrm{d}t\\
+&=\int \langle \pi_{\omega}(A^*)\Omega_{\omega},\mathrm{d}P_{\omega}(\lambda) \pi_{\omega}(A^*)\Omega_{\omega}\rangle\check{f}(-\lambda)\\
 &=\int \check{f}(\lambda)\mathrm{d}\nu_A(\lambda)\; .
 \end{align}
 Now $z\mapsto f(z)\tau_t(A)$ is an entire function, so that $\omega(A^*\tau_t(A))$ is as well and thus \begin{align}
-\omega(A^*\tau_f(A))=\int f(\tau+i\beta)\omega(A^*\tau_{t+i\beta}(a))\mathrm{d}t\; .
+\omega(A^*\tau_f(A))=\int f(\tau+i\beta)\omega(A^*\tau_{t+i\beta}(A))\mathrm{d}t\; .
 \end{align}
-If $\omega$ is a $(\tau,\beta)$-KMS state one finds furhtermore \begin{align}
+If $\omega$ is a $(\tau,\beta)$-KMS state one finds furthermore \begin{align}
 \omega(A^*\tau_f(A))=\int f(t+i\beta)\omega(\tau_t(A)A^*)\mathrm{d}t=\int\check{f}(\lambda)e^{t\beta \lambda}\mathrm{d}\nu_A\; .
 \end{align}
 And since this is true for any test function $\check{f}$ one obtains \begin{align}
@@ -818,8 +845,8 @@ And since this is true for any test function $\check{f}$ one obtains \begin{alig
 In fact: this is again an if and only if condition. \end{remarks}
 Now we can finally come to the proof of the theorem using all these relations: \begin{proof}
 \begin{align}
-\omega(A^*\delta(A))&=\langle\Pi_{\omega}(A)\Omega_{\omega},\left[iH_{\omega},\Pi_{\omega}(A)\right]\Omega_{\omega}\rangle\\
-&=i\langle \Pi_{\omega}(A)\Omega_{\omega},H_{\omega}\Pi_{\omega}(A)\Omega_{\omega}\rangle\; ,
+\omega(A^*\delta(A))&=\langle\pi_{\omega}(A)\Omega_{\omega},\left[iH_{\omega},\pi_{\omega}(A)\right]\Omega_{\omega}\rangle\\
+&=i\langle \pi_{\omega}(A)\Omega_{\omega},H_{\omega}\pi_{\omega}(A)\Omega_{\omega}\rangle\; ,
 \end{align}
 so that \begin{align}
 \frac{-i\beta\omega(A^*\delta(A))}{\omega(A^*A)}=\frac{\beta \int \lambda \mathrm{d}\mu_A(\lambda)}{\int\mathrm{d}\mu_A(\lambda)}\; .
@@ -831,7 +858,7 @@ taking the inverse relation gives \begin{align}
 \exp\left(-i\beta\frac{\omega(A^*\delta(A))}{\omega(A^*A)}\right)\geq \frac{\omega(A^*A)}{\omega(AA^*)}\; ,
 \end{align}
 which, after taking a log, yields the $\Rightarrow$ direction. For the inverse direction we have \begin{align}
-\omega(\tau_f(A)\tau_f(A)^*)&=\int f(t)f(t')e^{i(t-t')\lambda}\langle \Pi_{\omega}(A)\Omega_{\omega},\mathrm{d}P_{\omega}(\lambda)\Pi_{\omega}(A)\Omega_{\omega}\rangle\mathrm{d}t\mathrm{d}t'\\
+\omega(\tau_f(A)^*\tau_f(A))&=\int f(t)f(t')e^{i(t-t')\lambda}\langle \pi_{\omega}(A)\Omega_{\omega},\mathrm{d}P_{\omega}(\lambda)\pi_{\omega}(A)\Omega_{\omega}\rangle\mathrm{d}t\mathrm{d}t'\\
 &=\int |\check{f}(\lambda)|^2\mathrm{d}\mu_A(\lambda)\; .
 \end{align}
 And analogously \begin{align}
@@ -919,7 +946,7 @@ satisfies \begin{align}
 To illustrate that property think of $e^{it(H+V)}\cdot e^{-itH}$. We now define the work performed by the system along a cycle $V_t$, $t\in[0,T]$, with $V_0=V_t=0$, where the initial state is $\omega$, as \begin{align}
 W:=-\int_0^T(\omega\circ \tau_t^{V_t})\left(\frac{\partial V_t}{\partial t}\right)\mathrm{d}t\; .
 \end{align}
-this can be justified, csince the first factor is basiclaly the time evolved to time $t$ and $\frac{\partial V_t}{\partial t}$ corresponds to the instantaneous change of energy. Note that \begin{align}
+this can be justified, since the first factor is basically the time evolved to time $t$ and $\frac{\partial V_t}{\partial t}$ corresponds to the instantaneous change of energy. Note that \begin{align}
 \frac{\mathrm{d}}{\mathrm{d}t}(\omega\circ \tau_t^V)(V_t)=\omega\circ \tau_t^V(\delta_{V_t}(V_t))+(\omega\circ \tau_t^V)\left(\frac{\mathrm{d}V_t}{\mathrm{d}t}\right)
 \end{align}
 and since \begin{align}
@@ -935,7 +962,7 @@ We claim that \begin{align}
 W=i\omega(\Gamma_V(T)\delta(\Gamma_V(T)^*))\; ,
 \end{align}
 from the theorem follows by passivity of $\omega$. A calculation (write $\Gamma_V(T)=\Gamma$) gives \begin{align}
-i\omega(\Gamma\delta(\Gamma^*))&=\int_0^T[\omega(i\dot{\Gamma}\delta(\Gamma^*)+\omega(\Gamma\delta(i\dot{\gamma}^*))]\mathrm{d}t \qquad \mid \text{ use } -i\dot{\Gamma}=\Gamma\tau(V)\\
+i\omega(\Gamma\delta(\Gamma^*))&=\int_0^T[\omega(i\dot{\Gamma}\delta(\Gamma^*)+\omega(\Gamma\delta(i\dot{\Gamma}^*))]\mathrm{d}t \qquad \mid \text{ use } -i\dot{\Gamma}=\Gamma\tau(V)\\
 &=\int_0^T \omega(-\Gamma\tau(V)\delta(\Gamma^*)+\Gamma\delta(\tau(V)\Gamma^*))\\
 &= \int_0^T\omega(\Gamma\underbrace{\delta(\tau(V))}_{=\tau(\delta(V))}\Gamma^*)\mathrm{d}t\\
 &=\int_0^T\omega(\tau_t^V(\delta(V_t))\mathrm{d}t\quad \text{ since } \Gamma \text{ intertwines } \tau \text{ with } \tau^V\\
@@ -1030,7 +1057,7 @@ F_{\alpha}(A,B,t+i\beta)&=\omega(\tau_t(\alpha(B))\alpha(A))\\
 &=(\omega\circ\alpha)((\alpha^{-1}\circ\tau_t\circ\alpha)(B)A)\; ,
 \end{align}
 so that $(\omega\circ\alpha)$ is an $((\alpha^{-1}\circ\tau\circ\alpha),\beta)$-KMS state.
-\item A fundamental result of ''modular theory'' is the uniqueness of dynamics with respect to with a state is KMS. Now if $\omega\circ\alpha=\omega$, then $\omega$ is simultaneously a $(\tau,\beta)$-KMS state and a $((\alpha^{-1}\circ\tau\circ\alpha),\beta)$-KMS state (by the first part).
+\item A fundamental result of ''modular theory'' is the uniqueness of dynamics with respect to a state that is KMS. Now if $\omega\circ\alpha=\omega$, then $\omega$ is simultaneously a $(\tau,\beta)$-KMS state and a $((\alpha^{-1}\circ\tau\circ\alpha),\beta)$-KMS state (by the first part).
 \item Follows from the first part and $\tau_t=\alpha^{-1}\circ\tau_t\circ\alpha$.
 \end{enumerate}
 \end{proof}
@@ -1071,7 +1098,7 @@ for the first one use the assumption (B) to get \begin{align}
 |\omega(A^*(U_m^*\delta(U_m))A)&\leq \| U_m\delta(U_m)\| \omega(A^*A)\\
 &\leq M\omega(A^*A)\; .
 \end{align}
-For the second one note that $\omega(A^*\delta(A))=\langle\Pi_{\omega}(A)\Omega_{\omega},H_{\omega}\Pi_{\omega}(A)\Omega_{\omega}\rangle$ is unbounded. (Formally: Consider $A_n=P_nAP_n$, where $P_n=\int_{a_n}^{b_n}\mathrm{d}P(\lambda)$). So cover $\mathbb{R}$ by interval $[a_n,b_n]$, $|b_n-a_n|<1$ and $h_n^V\in C_c^{\infty}(\mathbb{R})$ with $\mathrm{supp}\check{h}_n\subset[a_n,b_n]$ and $\sum \check{h}_n^2=1$ and define \begin{align}
+For the second one note that $\omega(A^*\delta(A))=\langle\pi_{\omega}(A)\Omega_{\omega},H_{\omega}\pi_{\omega}(A)\Omega_{\omega}\rangle$ is unbounded. (Formally: Consider $A_n=P_nAP_n$, where $P_n=\int_{a_n}^{b_n}\mathrm{d}P(\lambda)$). So cover $\mathbb{R}$ by interval $[a_n,b_n]$, $|b_n-a_n|<1$ and $h_n^V\in C_c^{\infty}(\mathbb{R})$ with $\mathrm{supp}\check{h}_n\subset[a_n,b_n]$ and $\sum \check{h}_n^2=1$ and define \begin{align}
 A_n=\tau_{h_n}(A)=\int h_n(t)\tau_t(A)\mathrm{d}t\in\mathcal{A}.
 \end{align}
 Then one finds that \begin{align}
