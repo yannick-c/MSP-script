@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2017.7.16)  20 JUL 2017 22:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Arch Linux) (preloaded format=pdflatex 2017.7.20)  21 JUL 2017 11:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **script.tex
 (./script.tex
-LaTeX2e <2017/01/01> patch level 3
-Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
+LaTeX2e <2017-04-15>
+Babel <3.10> and hyphenation patterns for 84 language(s) loaded.
 (/usr/share/texmf-dist/tex/latex/memoir/memoir.cls
 Document Class: memoir 2016/05/16 v3.7f configurable book, report, article docu
 ment class
@@ -666,20 +666,20 @@ Now handling font encoding U ...
    defining Unicode char U+2423 (decimal 9251)
 ))
 (/usr/share/texmf-dist/tex/latex/base/fontenc.sty
-Package: fontenc 2017/02/22 v2.0g Standard LaTeX package
+Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
 
 (/usr/share/texmf-dist/tex/latex/base/t1enc.def
-File: t1enc.def 2017/02/22 v2.0g Standard LaTeX file
+File: t1enc.def 2017/04/05 v2.0i Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 ))
 (/usr/share/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2016/04/23 3.9r The Babel package
+Package: babel 2017/05/19 3.10 The Babel package
 
 (/usr/share/texmf-dist/tex/generic/babel-english/english.ldf
-Language: english 2017/01/24 v3.3q English support from the babel system
+Language: english 2017/06/06 v3.3r English support from the babel system
 
 (/usr/share/texmf-dist/tex/generic/babel/babel.def
-File: babel.def 2016/04/23 3.9r Babel common definitions
+File: babel.def 2017/05/19 3.10 Babel common definitions
 \babel@savecnt=\count137
 \U@D=\dimen147
 )
@@ -785,7 +785,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
 (/usr/share/texmf-dist/tex/latex/mathtools/mathtools.sty
-Package: mathtools 2015/11/12 v1.18 mathematical typesetting tools
+Package: mathtools 2017/05/24 v1.19 mathematical typesetting tools
 
 (/usr/share/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
@@ -801,7 +801,7 @@ LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Cskip=\skip194
 )
 (/usr/share/texmf-dist/tex/latex/mathtools/mhsetup.sty
-Package: mhsetup 2010/01/21 v1.2a programming setup (MH)
+Package: mhsetup 2017/03/31 v1.3 programming setup (MH)
 )
 LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
@@ -821,7 +821,7 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2016/10/09 v1.0u Standard LaTeX Graphics (DPC,SPQR)
+Package: graphics 2017/04/14 v1.1b Standard LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
@@ -1127,13 +1127,13 @@ File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
 
 ] [7] [8] [9]
 Missing character: There is no d in font msbm10!
- [10] <fermidirac.pdf, id=210, 285.32693pt x 284.13966pt>
+ [10] <fermidirac.pdf, id=222, 285.32693pt x 284.13966pt>
 File: fermidirac.pdf Graphic file (type pdf)
 
 <use fermidirac.pdf>
-Package pdftex.def Info: fermidirac.pdf used on input line 462.
+Package pdftex.def Info: fermidirac.pdf used on input line 461.
 (pdftex.def)             Requested size: 285.32622pt x 284.13896pt.
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 463.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 462.
 
  (/usr/share/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
@@ -1144,16 +1144,16 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             See the microtype manual for details.
  [11 <./fermidirac.pdf>] [12] [13] [14] [15] [16] [17] [18] [19] [20] [21] [22]
  [23]
-[24] [25] [26] [27] <carnot.pdf, id=547, 186.86443pt x 210.35207pt>
+[24] [25] [26] [27] <carnot.pdf, id=559, 186.86443pt x 210.35207pt>
 File: carnot.pdf Graphic file (type pdf)
 
 <use carnot.pdf>
-Package pdftex.def Info: carnot.pdf used on input line 979.
+Package pdftex.def Info: carnot.pdf used on input line 978.
 (pdftex.def)             Requested size: 186.86397pt x 210.35153pt.
  [28 <./carnot.pdf>] [29] [30] [31] [32] [33] [34
 
 ] [35]
-Overfull \hbox (32.66438pt too wide) in paragraph at lines 1215--1215
+Overfull \hbox (32.66438pt too wide) in paragraph at lines 1214--1214
 [] 
  []
 
@@ -1161,21 +1161,21 @@ Overfull \hbox (32.66438pt too wide) in paragraph at lines 1215--1215
 \tf@toc=\write5
 \openout5 = `script.toc'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1251.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1251.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1250.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1250.
  (./script.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1251.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1251.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1250.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1250.
 
 Package rerunfilecheck Info: File `script.out' has not changed.
 (rerunfilecheck)             Checksum: 8B7FD7E0D648080CECFE08369E8854DD;439.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1251.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1250.
  ) 
 Here is how much of TeX's memory you used:
- 13311 strings out of 493013
- 191285 string characters out of 6139317
- 355004 words of memory out of 5000000
- 16051 multiletter control sequences out of 15000+600000
+ 13354 strings out of 492995
+ 192036 string characters out of 6138756
+ 356728 words of memory out of 5000000
+ 16100 multiletter control sequences out of 15000+600000
  31756 words of font info for 162 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  34i,16n,38p,860b,622s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1202,10 +1202,10 @@ f-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/ty
 pe1/public/cm-super/sfrm1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-s
 uper/sfti1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1000.p
 fb>
-Output written on script.pdf (38 pages, 576349 bytes).
+Output written on script.pdf (38 pages, 576376 bytes).
 PDF statistics:
- 895 PDF objects out of 1000 (max. 8388607)
- 785 compressed objects within 8 object streams
- 436 named destinations out of 1000 (max. 500000)
+ 908 PDF objects out of 1000 (max. 8388607)
+ 791 compressed objects within 8 object streams
+ 439 named destinations out of 1000 (max. 500000)
  23627 words of extra memory for PDF output out of 24883 (max. 10000000)
 
