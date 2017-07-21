@@ -24,6 +24,7 @@ openany, % A chapter may start on either a recto or verso page.
 % \usepackage{kpfonts} %Font
 \usepackage{amsmath,amssymb,mathtools} % Math
 
+\usepackage{color}
 % \usepackage{tikz} % Figures
 \usepackage{graphicx} % Include figures
 
@@ -384,7 +385,7 @@ z=e^{\beta\mu}\; ,
 \end{align}
 one can find the following relation \begin{align}
 \exp(-\beta K_{\mu})&=\Gamma(\exp(-\beta(H-\mu\mathds{1})))=z\Gamma(\exp(-\beta H))\\
-e^{-\beta K_{\mu}}b^{\#}(\varphi)&=zb^{\#}(e^{-\beta H}\varphi)e^{-\beta K_{\mu}}\label{eqn::hashtag_dat_shit}\; ,
+e^{-\beta K_{\mu}}b^{\#}(\varphi)&=zb^{\#}(e^{-\beta H}\varphi)e^{-\beta K_{\mu}}\label{eqn::hashtag_eqn}\; ,
 \end{align}
 whereby the hashtag is a placeholder for nothing or dagger.
 \begin{prop}
@@ -394,7 +395,7 @@ whereby the hashtag is a placeholder for nothing or dagger.
 	\end{align}
 \end{prop}
 \begin{proof}
-	The proof uses first the definition of Gibbs state in Eq. \eqref{Eqn::def_gibbs_state} and then Eq. \eqref{eqn::hashtag_dat_shit} giving in the first line\begin{align}
+	The proof uses first the definition of Gibbs state in Eq. \eqref{Eqn::def_gibbs_state} and then Eq. \eqref{eqn::hashtag_eqn} giving in the first line\begin{align}
 	\omega_{\beta,\mu}(a^{*}(\varphi)a(\psi))=~~&Z^{-1}_{\beta,\mu}\mathrm{Tr}(zb^*(e^{-\beta H}\varphi)e^{-\beta K_{\mu}}b(\psi)) \mid \text{cycl. of tr}\\
 	=~~&z\omega_{\beta,\mu}(a(\psi)a^*(e^{-\beta H}\varphi)) \\
 	\overset{\eqref{eqn::comm_car}}{=}& -z\omega_{\beta,\mu}(a^*(e^{-\beta H}\varphi)a(\psi))\langle \psi, ze^{-\beta H}\varphi\rangle\\
@@ -417,7 +418,7 @@ $\text{where }\varrho = ze^{-\beta H}(\mathds{1}+ze^{-\beta H})^{-1}$.
 	The \textit{2n-point function} is expressed in terms of the 2-point function $\langle \psi, ze^{-\beta H}(\mathds{1}+ze^{-\beta H})^{-1}\varphi\rangle$ called \textit{Gaussian state} or \textit{quasi-free state}.
 \end{remarks}
 \begin{remarks}
-	The crucial property used in this calculation, expressed in Eq. \eqref{eqn::hashtag_dat_shit}, is the so called \textit{KMS condition} (which is adressed in further detail in Sec. \ref{sec::kms_states}) \begin{align}
+	The crucial property used in this calculation, expressed in Eq. \eqref{eqn::hashtag_eqn}, is the so called \textit{KMS condition} (which is adressed in further detail in Sec. \ref{sec::kms_states}) \begin{align}
 	\omega_{\beta,\mu}(BA)&=\omega_{\beta,\mu}(A\tau_{i\beta}(B))\\
 	&=\omega_{\beta,\mu}(Ae^{\beta K_{\mu}}Be^{-\beta K_{\mu}})\; .
 	\end{align}
@@ -1142,7 +1143,7 @@ Which ultimately leads to \begin{align}
 \omega(A_nA_n^*)^2\leq (\omega\circ\alpha)(A_NA_N^*)^2E^{\beta(m+2)}
 \end{align}
 \chapter{On Phase transitions in quantum spin systems}
-Let us first clear up what we mean with spin systems. We have a countable set $\Gamma$ with metric $d(\cdot,\cdot)$ (e.g. $\Gamma=\mathbb{Z}^{\nu}$). Then one write the volume (e.g. the number of elements) of a subset $\Lambda\subset\Gamma$ as $|\Lambda|$ and deifnes the set $\mathcal{F}(\Gamma):=\{\Lambda\subset\Gamma\mid |\Lambda|<\infty\}$. For any $x\in\Gamma$, let $\mathcal{H}_x$ be finite dimensional (i.e. these are the spins): $\sup\dim\mathcal{H}_x<\infty$. For $\Lambda\in\mathcal{F}(\Gamma)^x$ one defines \begin{align}
+Let us first clear up what we mean with spin systems. We have a countable set $\Gamma$ with metric $d(\cdot,\cdot)$ (e.g. $\Gamma=\mathbb{Z}^{\nu}$). Then one writes the volume (e.g. the number of elements) of a subset $\Lambda\subset\Gamma$ as $|\Lambda|$ and defines the set $\mathcal{F}(\Gamma):=\{\Lambda\subset\Gamma\mid |\Lambda|<\infty\}$. For any $x\in\Gamma$, let $\mathcal{H}_x$ be finite dimensional (i.e. these are the spins): $\sup\dim\mathcal{H}_x<\infty$. For $\Lambda\in\mathcal{F}(\Gamma)^x$ one defines \begin{align}
 \mathcal{H}_{\Lambda}=\bigotimes_{x\in\Lambda}\mathcal{H}_x\; .
 \end{align}
 Observables on $\Lambda\in\mathcal{F}(\Gamma)$ are defined on $\mathcal{A}_{\Lambda}\in\mathcal{L}(\mathcal{H}_{\Lambda})$ which are basically matrices. These are easily embedded into higher spaces $\Lambda_1\subset\Lambda_2$ as $\mathcal{A}_{\Lambda_1}\simeq \mathcal{A}_{\Lambda_1}\otimes\mathds{1}_{\mathcal{H}_{\Lambda_2}}$. Clearly for $A\in\mathcal{A}_1$, $B\in\mathcal{A}_1$, $\Lambda\cap\Lambda'=\emptyset\Rightarrow[A,B]=0$, since $(A\otimes \mathds{1})\cdot(\mathds{1}\otimes B)=A\otimes B=(\mathds{1}\otimes B)(A\otimes\mathds{1})$. Now $\mathcal{A}_{loc}=\bigcup_{\Lambda\in\mathcal{F}(A)}A_{\Lambda}$, called a local observable, and then $\mathcal{A}=\overline{\mathcal{A}_{loc}}^{\|\cdot\|}$, is a $C^*$-algebra.\\
@@ -1150,20 +1151,20 @@ Dynamics are given by interactions which corresponds to the following kind of ma
 \Phi:\mathcal{F}(\Gamma)&\longrightarrow \mathcal{A}\\
 x &\longmapsto \Phi(x)=\Phi(x)\subset \mathcal{A}_x\; ,
 \end{align}
-Whereby $\phi(x)$ is an interaction between spins living in x. And define the Hamiltonian as \begin{align}
+Whereby $\Phi(x)$ is an interaction between spins living in x. And define the Hamiltonian as \begin{align}
 H_{\Lambda}=\sum_{x\subset\Lambda}\Phi(x)\; .
 \end{align}
-A typical example of this is a two-body interaction $\Phi(x)=0$ if $|x|\neq 2$. Dynamics (in finite volume $\Lambda\in\mathcal{F}(\Gamma)$) are then given by \begin{align}
+A typical example of this is a two-body interaction $\Phi(x)=0$ if $|x|\neq 2$ \textcolor{red}{TODO: This has to be a set of different 'sites', but $x$ was used above to denote a single site, change hte notation}. Dynamics (in finite volume $\Lambda\in\mathcal{F}(\Gamma)$) are then given by \begin{align}
 \tau_t^{\Lambda}(A)=e^{itH_{\Lambda}}Ae^{-itH_{\Lambda}}\; ,
 \end{align}
-has a well defined limit as $\Lambda\rightarrow\Gamma$, i.e. there exist dynamics $\tau_t$ on $\mathcal{A}$ such that \begin{align}
+which has a well defined limit as $\Lambda\rightarrow\Gamma$, i.e. there exist dynamics $\tau_t$ on $\mathcal{A}$ such that \begin{align}
 \|\tau_t^{\Lambda}(A)-\tau_t(A)\|\rightarrow 0\; ,
 \end{align}
-as $\Lambda\rightarrow \Gamma$ under sufficient decay assumptions on $\|\phi(x)\|$ as diameter $\mathrm{diam}(x)$ grows. The \underline{Mermin-Wagner theorem} now states that the absence of continuous symmetry breaking in $\nu=1,2$. Here consider the same Hamiltonian on all sites $\mathcal{H}_x=\mathcal{H}$ for all $x\in\Gamma$. And consider furthermore a continuous symmetry given by a compact connected Lie group $G$ (e.g. $SU(2)$). Assume there exists the following unitary representation of $G$ on $\mathcal{H}$ given by \begin{align}
+as $\Lambda\rightarrow \Gamma$ under sufficient decay assumptions on $\|\phi(x)\|$ as diameter $\mathrm{diam}(x)$ \textcolor{red}{TODO: replace diam with $|x|$?} grows. The \underline{Mermin-Wagner theorem} now states that the absence of continuous symmetry breaking in $\nu=1,2$. Here consider the same Hamiltonian on all sites $\mathcal{H}_x=\mathcal{H}$ for all $x\in\Gamma$. And consider furthermore a continuous symmetry given by a compact connected Lie group $G$ (e.g. $SU(2)$). Assume there exists the following unitary representation of $G$ on $\mathcal{H}$ given by \begin{align}
 U:G&\longrightarrow \mathcal{L}(\mathcal{H}) \\
 g&\longmapsto U_g\; .
 \end{align}
-Whereby $U_gU_{g'}=U_{gg'}$, $U_{e}=\mathds{1}$ and $U_gU_g^*=U_g^*U_g=\mathds{1}$. Induces an action of $G$ on $\mathcal{A}_{G(x)}$ given by $A\mapsto U_g^*A U_g$. Furthermore, on $\mathcal{A}_{\Lambda}, \Lambda\in\mathcal{F}(\Gamma)$ by $\otimes_{x\in\Lambda}U_g$ and yields $*$-automorphisms of $\mathcal{A}$ \begin{align}
+Whereby $U_gU_{g'}=U_{gg'}$, $U_{e}=\mathds{1}$ and $U_gU_g^*=U_g^*U_g=\mathds{1}$. Then this induces an action of $G$ on $\mathcal{A}_{G(x)}$ given by $A\mapsto U_g^*A U_g$. Furthermore, on $\mathcal{A}_{\Lambda}, \Lambda\in\mathcal{F}(\Gamma)$ by $\otimes_{x\in\Lambda}U_g$ and yields $*$-automorphisms of $\mathcal{A}$ \begin{align}
 \alpha_g(A)=\lim_{\Lambda\rightarrow\Gamma}\alpha_g^{\Lambda}(A) =\lim_{\Lambda\rightarrow\Gamma} \left(\bigotimes_{x\in\Lambda}U_g\right)^*A\left(\bigotimes_{x\in\Lambda}U_g\right)\; .
 \end{align}
 Note that the limit exists for any $A\in\mathcal{A}_{loc}$.
@@ -1177,7 +1178,7 @@ C:=\sup_{x\in\mathbb{Z}^2}\sum_{y\in\mathbb{Z}^2}\|\phi(x,y)\| d(x,y)^2<\infty,
 then for any $0<\beta<\infty$, all $(\tau,\beta)$-KMS states are $G$-invariant, i.e. $\omega\circ\alpha_g=\omega$ $\forall g\in G$.
 \end{theorem}
 \begin{notes}
-This can be extended to n-body interaction.
+This can be extended to n-body interactions.
 \end{notes}
 \begin{notes}
 For a translation-invariant interaction, the sharp decay condition on $\|\phi(x,y)\|$ so that the theorem still holds is \begin{align}
@@ -1185,7 +1186,7 @@ For a translation-invariant interaction, the sharp decay condition on $\|\phi(x,
 \end{align}
 \end{notes}
 \begin{proof}
-One needs to check the assumptions (A) and (B'). It sufficed to show the claim for an arbitrary one dimensional subgroup of $G$, since, if one considers rotations, one can always split them up into partial rotations around the coordinate axes. Let $S=S^*\in\mathcal{L}(\mathcal{H})$ be the generator then one writes \begin{align}
+One needs to check the assumptions (A) and (B'). It suffices to show the claim for an arbitrary one dimensional subgroup of $G$, since, if one considers rotations, one can always split them up into partial rotations around the coordinate axes. Let $S=S^*\in\mathcal{L}(\mathcal{H})$ be the generator then one writes \begin{align}
 U_{\phi}=\exp(i\phi S)\qquad \phi\in [0,2\pi)\; .
 \end{align}
 First define a smooth approximation of $\alpha_g$: For $m\in\mathbb{N}$, $\Lambda_{m}=[-m,m]^2\cap\mathbb{Z}$ and $\varphi_m:\mathbb{Z}^2\rightarrow[0,2\pi)^2$: with fixed angle $\phi\in[0,2\pi)$ one can define \begin{align}
@@ -1208,9 +1209,9 @@ U_m(\phi)^*\phi(x,y)U_m(\phi)=\alpha_{\phi}(\phi(x,y))=\phi(x,y)\;.
 With the action on $x$ defined as $S_x$ one can write \begin{align}
 \varphi_m(x)S_x+\varphi_m(x)S_y&=\frac{\varphi_m(x)+\varphi_m(y)}{2}(S_x+S_y)+\frac{\varphi_m(x)-\varphi_m(y)}{2}(S_x-S_y)\\ &= E_m(x,y)+O_m(x,y)\; .
 \end{align}
-Note that $[E_m(x,y),O_m(x,y)]=0$ and $E_m(x,y)$ generates the same rotation at $x-$ and $y-$coordinates and \begin{align}
-U_{\phi}(m)^*\phi(x,y)U_{\phi}(m)&=\exp(i O_m(x,y))\exp(i E_m(x,y))\phi(x,y)\exp(-iE_m(x,y))\exp(-i O_m(x,y))\\
-&= \exp(iO_m(x,y))\phi(x,y)\exp(-i O_m(x,y))\; .
+Note that $[E_m(x,y),O_m(x,y)]=0$ and $E_m(x,y)$ generates the same rotation at $x-$ and $y-$coordinates and \begin{align}\begin{split}
+U_{\phi}(m)^*\phi(x,y)U_{\phi}(m)=&\exp(i O_m(x,y))\exp(i E_m(x,y))\phi(x,y)\\ &\cdot \exp(-iE_m(x,y))\exp(-i O_m(x,y))\end{split}\\
+=& \exp(iO_m(x,y))\phi(x,y)\exp(-i O_m(x,y))\; .
 \end{align}
 Because \begin{align}
 \exp(i E_m(x,y))\phi(x,y)\exp(-i E_m(x,y))=\alpha_{\frac{1}{2}(\varphi_m(x)+\varphi_m(y))}(\phi(x,y))=\phi(x,y)\; .
@@ -1219,7 +1220,7 @@ Hence one can expand that expression to \begin{align}
 U_{\phi}(m)^*\phi(x,y)U_{\phi}(m) = \phi(x,y)=\sum_{k=1}^{\infty} \frac{i^k}{k!}[O_m(x,y),[O_m(x,y),[\cdots[O_m(x,y),\phi(x,y)]\cdots]\; . \label{eqn::merminproof}
 \end{align}
 Introducing the following notation \begin{align}
-U_{\phi}(m)^*\delta(U_{\phi}(m)+U_{\phi}(m)\delta(U_{\phi}(m)^*)=i\sum_{x,y}\Delta_m(x,y)l\; ,
+U_{\phi}(m)^*\delta(U_{\phi}(m))+U_{\phi}(m)\delta(U_{\phi}(m)^*)=i\sum_{x,y}\Delta_m(x,y)l\; ,
 \end{align}
 and observe $U_{\phi}(m)\delta(U_{\phi}(m)^*)=U_{-\phi}(m)^*\delta(U_{-\phi}(m))$ and  that $O_m(x,y)$ is odd under $\phi\rightarrow -\phi$ so that all terms of odd order cancel out, yielding \begin{align}
 \| \Delta_m(x,y)\| \leq 2 \sum_{k\geq 1} \frac{1}{(2k)!}\left(\frac{\varphi_m(x)-\varphi_m(y)}{2}\right)^{2k} \| \mathrm{ad}_{S_x-S_y}^{2k}(\phi(x,y))\|\; ,
