@@ -160,16 +160,14 @@ openany, % A chapter may start on either a recto or verso page.
 \title{Mathematical Statistical Physics}
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[chapter]
-\newtheorem{example}{Example}[chapter]
+\newtheorem{example}[definition]{Example}
 \theoremstyle{remark}
-\newtheorem{remarks}{Remarks}[chapter]
-\newtheorem{notes}{Notes}[chapter]
+\newtheorem{remarks}[definition]{Remarks}
+\newtheorem{notes}[definition]{Notes}
 \theoremstyle{plain}
-\newtheorem{theorem}{Theorem}[chapter]
-\newtheorem{prop}{Proposition}[chapter]
-\newtheorem{lemma}{Lemma}[chapter]
-\usepackage{simplewick}
-\usepackage{tensor}
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{prop}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
 \begin{document}
 \setlength{\parindent}{0pt}
 \maketitle
@@ -1071,7 +1069,7 @@ In the case $\dim(\mathcal{H})<\infty$ a faithful state is given by a density ma
 The third part indicates that the set of $(\tau,\beta)$-KMS states is invariant under the action of a symmetry $\alpha$. If this is not the case for every single element in the set one speaks of symmetry breaking. There is a general criterion for the absence of symmetry breaking called the ''Mermin-Wagner theorem''.
 \end{remarks}
 For this theorem we will again first state the assumptions \begin{itemize}
-\item~[Assumption(A)]: $\alpha$ is \textit{almost inner}, i.e. there exists $(U_n)_{n\in\mathbb{N}}$, $U_n\in A^{\infty}$ unitary such that $U_n\in D(\delta)$ and \begin{align}
+\item~[Assumption(A)]: $\alpha$ is \textit{almost inner}, i.e. there exists $(U_n)_{n\in\mathbb{N}}$, $U_n\in \mathcal{A}^{\infty}$ unitary such that $U_n\in D(\delta)$ and \begin{align}
 \lim\limits_{n\rightarrow\infty}\|\alpha(A)-U_n^*AU_n\| =0 \; .
 \end{align}
 \item~[Assumption(B)]: $\|\delta(U_m)\|\leq M$ for all $m\in\mathbb{N}$.
@@ -1080,7 +1078,7 @@ Typically $U_m$ are labelled by finite subsets $\Lambda_m$ of a lattice, in that
 \delta(U_m)\sim i[H_{\Lambda_m},U_m]\; ,
 \end{align}
 whose norm a priori goes like $|\partial\Lambda_m|$.
-\begin{theorem}
+\begin{theorem}\label{thm::thm_with_assumptionsAB}
 Let $\alpha$ be a symmetry of $(\mathcal{A},\tau)$. If (A) and (B) hold, then all $(\tau,\beta)$-KMS states are $\alpha-$invariant for all $0<\beta<\infty$.
 \end{theorem}
 \begin{proof}[Sketch of proof]
@@ -1132,7 +1130,7 @@ There is actually another version of assumption (B) once could have made \begin{
 \item~[Assumption(B')]: All $(\tau,\beta)$-KMS states are $\alpha^2$-invariant and \begin{align}
 \|U_m^*\delta(U_m)+U_m\delta(U_m^*)\|< M\;.
 \end{align}\end{itemize}
-Whereby one can essentially repeat the previous proof with $(B')$ and repeat the estimated above with $U_m^*\leftrightarrow U_m$, and the sum of the two estimates becomes \begin{align}
+Whereby one can essentially repeat the previous proof with $(B')$ and repeat the estimate above with $U_m^*\leftrightarrow U_m$, and the sum of the two estimates becomes \begin{align}
 \omega(A^*_nA_n)\log\frac{\omega(A_nA_n^*)^2}{\omega(U_mA_nA_n^+U_m^*)\omega(U_m^*A_nA_n^*U_m)}&\leq \beta\omega(A_n^*A_n)(M+w)\\
 (\omega\circ\alpha^{-1})(A_nA_n^*)(\omega\circ\alpha)(A_nA_n^*)e^{\beta(M+1)}&\geq \omega(A_nA_n^*)^2\; ,
 \end{align}
@@ -1146,93 +1144,124 @@ Which ultimately leads to \begin{align}
 Let us first clear up what we mean with spin systems. We have a countable set $\Gamma$ with metric $d(\cdot,\cdot)$ (e.g. $\Gamma=\mathbb{Z}^{\nu}$). Then one writes the volume (e.g. the number of elements) of a subset $\Lambda\subset\Gamma$ as $|\Lambda|$ and defines the set $\mathcal{F}(\Gamma):=\{\Lambda\subset\Gamma\mid |\Lambda|<\infty\}$. For any $x\in\Gamma$, let $\mathcal{H}_x$ be finite dimensional (i.e. these are the spins): $\sup\dim\mathcal{H}_x<\infty$. For $\Lambda\in\mathcal{F}(\Gamma)^x$ one defines \begin{align}
 \mathcal{H}_{\Lambda}=\bigotimes_{x\in\Lambda}\mathcal{H}_x\; .
 \end{align}
-Observables on $\Lambda\in\mathcal{F}(\Gamma)$ are defined on $\mathcal{A}_{\Lambda}\in\mathcal{L}(\mathcal{H}_{\Lambda})$ which are basically matrices. These are easily embedded into higher spaces $\Lambda_1\subset\Lambda_2$ as $\mathcal{A}_{\Lambda_1}\simeq \mathcal{A}_{\Lambda_1}\otimes\mathds{1}_{\mathcal{H}_{\Lambda_2}}$. Clearly for $A\in\mathcal{A}_1$, $B\in\mathcal{A}_1$, $\Lambda\cap\Lambda'=\emptyset\Rightarrow[A,B]=0$, since $(A\otimes \mathds{1})\cdot(\mathds{1}\otimes B)=A\otimes B=(\mathds{1}\otimes B)(A\otimes\mathds{1})$. Now $\mathcal{A}_{loc}=\bigcup_{\Lambda\in\mathcal{F}(A)}A_{\Lambda}$, called a local observable, and then $\mathcal{A}=\overline{\mathcal{A}_{loc}}^{\|\cdot\|}$, is a $C^*$-algebra.\\
-Dynamics are given by interactions which corresponds to the following kind of map \begin{align}
+We need to translate all our expressions into the language of these systems now
+\begin{itemize}
+\item Observables on $\Lambda\in\mathcal{F}(\Gamma)$ are defined on $\mathcal{A}_{\Lambda}\in\mathcal{L}(\mathcal{H}_{\Lambda})$ which are basically matrices. These are easily embedded into higher spaces $\Lambda_1\subset\Lambda_2$ as $\mathcal{A}_{\Lambda_1}\simeq \mathcal{A}_{\Lambda_1}\otimes\mathds{1}_{\mathcal{H}_{\Lambda_2\setminus \Lambda_1}}\subset \mathcal{A}_{\Lambda_2}$. Clearly for $A\in\mathcal{A}_X$, $B\in\mathcal{A}_Y$, $X\cap Y=\emptyset\Rightarrow[A,B]=0$, since \begin{align}
+(A\otimes \mathds{1})\cdot(\mathds{1}\otimes B)=A\otimes B=(\mathds{1}\otimes B)(A\otimes\mathds{1})\; .
+\end{align}
+ Define the algebra of local observables as 
+\begin{align} 
+\mathcal{A}_{loc}=\bigcup_{\Lambda\in\mathcal{F}(A)}A_{\Lambda}\; .
+\end{align}
+and the complete algebra as $\mathcal{A}=\overline{\mathcal{A}_{loc}}^{\|\cdot\|}$, which is a $C^*$-algebra with an identity. \\
+\item Any state $\omega$ on $\mathcal{A}$ is \textit{locally normal}, namely \begin{align}
+\omega\mid_{\mathcal{A}_{\Lambda}}=\mathrm{Tr}(\varrho_{\Lambda}^{\omega}~\cdot~),\quad  \Lambda\in\mathcal{F}(\Gamma)\;,
+\end{align}
+i.e. one can think of $\omega$ on $\mathcal{A}_{loc}$ as the family of density matrices $\{\varrho_{\Lambda}^{\omega}:\Lambda\in\mathcal{F}(\Gamma)\}$.\\
+\item Dynamics are given by maps\begin{align}
 \Phi:\mathcal{F}(\Gamma)&\longrightarrow \mathcal{A}\\
-x &\longmapsto \Phi(x)=\Phi(x)\subset \mathcal{A}_x\; ,
+X &\longmapsto \Phi(X)=\Phi(X)=\Phi(X)^*\in\mathcal{A}_X\; ,
 \end{align}
-Whereby $\Phi(x)$ is an interaction between spins living in x. And define the Hamiltonian as \begin{align}
-H_{\Lambda}=\sum_{x\subset\Lambda}\Phi(x)\; .
+which can be thought of as interactions between ''spins'' in the finite set $X\in\mathcal{F}(\Gamma)$. 
+\item The Hamiltonian is given as the sum of local interactions\begin{align}
+H_{\Lambda}=\sum_{x\subset\Lambda}\Phi(x),\quad \Lambda\in\mathcal{F}(\Gamma)\; .
 \end{align}
-A typical example of this is a two-body interaction $\Phi(x)=0$ if $|x|\neq 2$ \textcolor{red}{TODO: This has to be a set of different 'sites', but $x$ was used above to denote a single site, change hte notation}. Dynamics (in finite volume $\Lambda\in\mathcal{F}(\Gamma)$) are then given by \begin{align}
+\end{itemize}
+A typical example of this is a two-body interaction $\Phi(X)=0$ if $|X|\neq 2$.\\
+The finite volume dynamics \begin{align}
 \tau_t^{\Lambda}(A)=e^{itH_{\Lambda}}Ae^{-itH_{\Lambda}}\; ,
 \end{align}
-which has a well defined limit as $\Lambda\rightarrow\Gamma$, i.e. there exist dynamics $\tau_t$ on $\mathcal{A}$ such that \begin{align}
-\|\tau_t^{\Lambda}(A)-\tau_t(A)\|\rightarrow 0\; ,
+has a well defined limit as $\Lambda\rightarrow\Gamma$, i.e. there exist $\tau$, a strongly continuous, 1-parameter group of automorphisms of $\mathcal{A}$, such that \begin{align}
+\lim\limits_{\Lambda\rightarrow\Gamma}\|\tau_t^{\Lambda}(A)-\tau_t(A)\|\rightarrow 0\; , \quad \forall t\in\mathbb{R},A\in\mathcal{A}
 \end{align}
-as $\Lambda\rightarrow \Gamma$ under sufficient decay assumptions on $\|\phi(x)\|$ as diameter $\mathrm{diam}(x)$ \textcolor{red}{TODO: replace diam with $|x|$?} grows. The \underline{Mermin-Wagner theorem} now states that the absence of continuous symmetry breaking in $\nu=1,2$. Here consider the same Hamiltonian on all sites $\mathcal{H}_x=\mathcal{H}$ for all $x\in\Gamma$. And consider furthermore a continuous symmetry given by a compact connected Lie group $G$ (e.g. $SU(2)$). Assume there exists the following unitary representation of $G$ on $\mathcal{H}$ given by \begin{align}
+under sufficient decay assumptions on $\|\phi(X)\|$ as diameter $\mathrm{diam}(X)$ (diameter being the spatial distance between the points as opposed to the dimension $|X|$) grows. And example is \begin{align}
+\Phi(X)=0 \text{ whenever } \mathrm{diam}(X) > R, 
+\end{align} i.e. basically finite-range interaction.\\
+The \underline{Mermin-Wagner theorem} states the absence of continuous symmetry breaking in $\nu=1,2$. Here consider the same Hamiltonian on all sites $\mathcal{H}_x=\mathcal{H}$ for all $x\in\Gamma$. Furthermore, consider a continuous symmetry given by a compact connected Lie group $G$ (e.g. $SU(2)$). Assume there exists the following unitary representation of $G$ on $\mathcal{H}$ given by \begin{align}
 U:G&\longrightarrow \mathcal{L}(\mathcal{H}) \\
 g&\longmapsto U_g\; .
 \end{align}
-Whereby $U_gU_{g'}=U_{gg'}$, $U_{e}=\mathds{1}$ and $U_gU_g^*=U_g^*U_g=\mathds{1}$. Then this induces an action of $G$ on $\mathcal{A}_{G(x)}$ given by $A\mapsto U_g^*A U_g$. Furthermore, on $\mathcal{A}_{\Lambda}, \Lambda\in\mathcal{F}(\Gamma)$ by $\otimes_{x\in\Lambda}U_g$ and yields $*$-automorphisms of $\mathcal{A}$ \begin{align}
+Whereby $U_gU_{g'}=U_{gg'}$, $U_{e}=\mathds{1}$ and $U_gU_g^*=U_g^*U_g=\mathds{1}$. Then this induces an action of $G$ on $\mathcal{A}_{\{x\}}$ given by $A\mapsto U_g^*A U_g$. Furthermore, on $\mathcal{A}_{\Lambda}, \Lambda\in\mathcal{F}(\Gamma)$ by $\otimes_{x\in\Lambda}U_g$ (whereby the implicit assumption that we take the same relation at every point is made) and yields $*$-automorphisms of $\mathcal{A}$ as the limit \begin{align}
 \alpha_g(A)=\lim_{\Lambda\rightarrow\Gamma}\alpha_g^{\Lambda}(A) =\lim_{\Lambda\rightarrow\Gamma} \left(\bigotimes_{x\in\Lambda}U_g\right)^*A\left(\bigotimes_{x\in\Lambda}U_g\right)\; .
 \end{align}
-Note that the limit exists for any $A\in\mathcal{A}_{loc}$.
+\begin{notes}
+The limit exists for any $A\in\mathcal{A}_{loc}$ since $\alpha_g^{\Lambda}(A)$ is independent of $\Lambda$ for $\Lambda$ large enough, and it defines a bounded linear map of norm $1$. Hence the limit extends to the completion $\mathcal{A}$ of $\mathcal{A}_{loc}$.
+\end{notes}
 \begin{example}
 $G=SU(2)$ with $U_g=\exp(2\pi i g S)$ where $S$ are the three spin matrices and $g$ is a point in the unit ball.
 \end{example}
+We will now prove the absence of symmetry breaking in $2D$-quantum spin systems. The $1D$-case is significantly easier and is left as an exercise.
 \begin{theorem}
-Let $\mathcal{A}$ be a quantum spin algebra wihth $\Gamma=\mathbb{Z}^2$, $\{\alpha_g:g\in G\}$ the action of a compact, connected Lie group $G$ on $\mathcal{A}$, and $\phi$ be a $G-$invariant two-body interaction. $\alpha_g(\phi(x,y))=\phi(x,y)$ for all $x,y\in(\mathbb{Z}^2,\mathbb{Z}^2)$, $g\in G$. If \begin{align}
+Let $\mathcal{A}$ be a quantum spin algebra with $\Gamma=\mathbb{Z}^2$, $\{\alpha_g:g\in G\}$ the action of a compact, connected Lie group $G$ on $\mathcal{A}$, and let $\phi$ be a $G-$invariant two-body interaction. $\alpha_g(\phi(x,y))=\phi(x,y)$ for all $(x,y)\in(\mathbb{Z}^2,\mathbb{Z}^2)$, $g\in G$. If \begin{align}
 C:=\sup_{x\in\mathbb{Z}^2}\sum_{y\in\mathbb{Z}^2}\|\phi(x,y)\| d(x,y)^2<\infty,
 \end{align}
 then for any $0<\beta<\infty$, all $(\tau,\beta)$-KMS states are $G$-invariant, i.e. $\omega\circ\alpha_g=\omega$ $\forall g\in G$.
 \end{theorem}
-\begin{notes}
+\begin{remarks}
+We will use the notation $\Phi(X,Y)=\Phi({x,y})$ for a two-body interaction freely. Note that these are two two-dimensional objects, i.e. $x,y\in\mathbb{Z}^2$.
+\end{remarks}
+\begin{remarks}
 This can be extended to n-body interactions.
-\end{notes}
-\begin{notes}
-For a translation-invariant interaction, the sharp decay condition on $\|\phi(x,y)\|$ so that the theorem still holds is \begin{align}
-\sup_{x\in\mathbb{Z}^2}\sum_{y\in\mathbb{Z}^2}\|\phi(x,y)\|\mathrm{d}(x,y)^2<\infty\; .
+\end{remarks}
+\begin{remarks}
+The condition for the constant, imposes sufficient decay on $\|\Phi(x,y)\|$ as $\mathrm{d}(x,y)\rightarrow\infty$. For a translation- and rotation-invariant interaction, the sharp decay condition is\begin{align}
+\|\Phi(x,y)\|\leq C\mathrm{d}(x,y)^{-4}\; .
 \end{align}
-\end{notes}
+\end{remarks}
 \begin{proof}
-One needs to check the assumptions (A) and (B'). It suffices to show the claim for an arbitrary one dimensional subgroup of $G$, since, if one considers rotations, one can always split them up into partial rotations around the coordinate axes. Let $S=S^*\in\mathcal{L}(\mathcal{H})$ be the generator then one writes \begin{align}
-U_{\phi}=\exp(i\phi S)\qquad \phi\in [0,2\pi)\; .
+It suffices to check the conditions (A) and (B') of Theorem \ref{thm::thm_with_assumptionsAB}. It suffices to show the claim for an arbitrary one dimensional subgroup $H$ of $G$ \begin{align}
+H=\mathbb{R}/\mathbb{Z}=S^1\; ,
+\end{align} since if one considers rotations, one can always split them up into partial rotations around the coordinate axes. Let $S=S^*\in\mathcal{L}(\mathcal{H})$ be its generator such that\begin{align}
+U_{\phi}=\exp(i\phi S),\quad \phi\in [0,2\pi)\; .
 \end{align}
-First define a smooth approximation of $\alpha_g$: For $m\in\mathbb{N}$, $\Lambda_{m}=[-m,m]^2\cap\mathbb{Z}$ and $\varphi_m:\mathbb{Z}^2\rightarrow[0,2\pi)^2$: with fixed angle $\phi\in[0,2\pi)$ one can define \begin{align}
+First define a smooth approximation of $\alpha_g$: Let $m\in\mathbb{N}$, $\Lambda_{m}=[-m,m]^2\cap\mathbb{Z}^2$, $\varphi_m:\mathbb{Z}^2\rightarrow[0,2\pi)$. One defines \begin{align}
 \varphi_m(x)=\begin{cases}\phi & \colon x\in\Lambda_m \\
-\phi(2-\mathrm{max}\{|x_1|,|x_2|\}/m&\colon x=(x_1,x_2)\in\Lambda_{2m}\setminus\Lambda_m\\
-0 & \colon x\in \mathbb{Z}^2\setminus\Lambda_{2m} \end{cases}\; ,
+\phi(2-\mathrm{max}\{|x_1|,|x_2|\}/m)&\colon x=(x_1,x_2)\in\Lambda_{2m}\setminus\Lambda_m\\
+0 & \colon x\in \mathbb{Z}^2\setminus\Lambda_{2m} \end{cases}\; ,\label{eqn::distance_dep_rotation}
 \end{align}
 and let \begin{align}
-U_{\phi}(m)=\bigotimes_{x\in\Lambda_{2m}}\exp(i\varphi_m(x)S)\; .
+U_{\phi}(m)=\bigotimes_{x\in\Lambda_{2m}}\exp(i\varphi_m(x)S)\in\mathcal{A}_{\Lambda_{2m}}\subset\mathcal{D}(\delta)\; .\label{eqn::def_U_matrix}
 \end{align}
-Let $A\in\mathcal{A}_{loc}$ then there exists $m_0$ such that $A\in\mathcal{A}_{\Lambda_m}$ for every $m\geq m_0$. But then $U_{\phi}(m)^*AU_{\phi}(m)=\alpha_{\phi}(A)$ for all $m\geq m_0$. So that $U_{\phi}(m)^*AU_{\phi}(m)\rightarrow\alpha_{\phi}(A)$ on $\mathcal{A}_{loc}$. So by density of $\mathcal{A}_{loc}$ in $A$ and boundedness of $\alpha_{\phi}\mid_{\mathcal{A}{loc}}$ the convergence extends to all of $\mathcal{A}$ and one recovers assumptions (A).\\
+Let $A\in\mathcal{A}_{loc}$ then there exists $m_0$ such that $A\in\mathcal{A}_{\Lambda_m}$ for all $m\geq m_0$. Then $U_{\phi}(m)^*AU_{\phi}(m)=\alpha_{\phi}(A)$ for all $m\geq m_0$. So that $U_{\phi}(m)^*\cdot U_{\phi}(m)\rightarrow\alpha_{\phi}(\cdot)$ on $\mathcal{A}_{loc}$. So by density of $\mathcal{A}_{loc}$ in $\mathcal{A}$ and boundedness of $\alpha_{\phi}\mid_{\mathcal{A}{loc}}$ the convergence extends to all of $\mathcal{A}$ and one recovers the assumption (A).\\
 If $A\in\mathcal{A}_X$ for $X\in\mathcal{F}(\mathbb{Z}^2)$ then \begin{align}
-\delta(A)=i[H,A]=i\sum_{\mathclap{\{x,y\}\cap X\neq \emptyset}}[\phi(x,y),A]\; ,
+\delta(A)=i[H,A]=i\sum_{\mathclap{\{x,y\}\cap X\neq \emptyset}}[\Phi(x,y),A]\; ,
 \end{align}
-so that \begin{align} U_{\phi}(m)^*\delta(U_{\phi}(m))&=i\sum_{\mathclap{\{x,y\}\in\mathbb{Z}^2\setminus \mathcal{N}_{m}}} U_{\phi}^*(m)\phi(x,y)U_{\phi}(m)-\phi(x,y)\quad \text{with}\\\mathcal{N}_m &:=\{\{x,y\}: x,y\in\Lambda_m \lor x,y\in\mathbb{Z}^2\setminus\Lambda_{2m}\} \;.
+so that 
+\begin{align} 
+U_{\phi}(m)^*\delta(U_{\phi}(m))&=i\sum_{\mathclap{\{x,y\}\in\mathbb{Z}^2\setminus \mathcal{N}_{m}}} (U_{\phi}^*(m)\Phi U_{\phi}(m))(x,y)\footnotemark-\Phi(x,y)\quad \text{with}\\\mathcal{N}_m &:=\{\{x,y\}: x,y\in\Lambda_m \text{ or } x,y\in\mathbb{Z}^2\setminus\Lambda_{2m}\} \;.
 \end{align}
+\footnotetext{It is not strictly necessary to put $(x,y)$ in front of the whole expression, as only the interaction term $\Phi$ depends on them. In this way it is easier to see though, that the angle by which $U$ rotates is influenced by the input argument as well, as can be seen from Eq. \eqref{eqn::def_U_matrix}, in which different angles are applied to different lattice sites (i.e. different elements of the tensor product). The input arguments kind of ''choose'' the relevant part of the tensor product.}
 Since for all $\{x,y\}\in\mathcal{N}_m$ rotations happen around the same angle and the involved operators commute, i.e. \begin{align}
-U_m(\phi)^*\phi(x,y)U_m(\phi)=\alpha_{\phi}(\phi(x,y))=\phi(x,y)\;.
+(U_m(\phi)^*\Phi U_m(\phi))(x,y)=\alpha_{\phi}(\Phi(x,y))=\Phi(x,y)\;.
 \end{align}
+For $\{x,y\}\in \mathbb{Z}^2\setminus\mathcal{N}_m$ one would rotate with different angles for the x and y part, thus giving a different interaction term compared to if one would not rotate. This is the definition of non-commuting operators.\\
 With the action on $x$ defined as $S_x$ one can write \begin{align}
-\varphi_m(x)S_x+\varphi_m(x)S_y&=\frac{\varphi_m(x)+\varphi_m(y)}{2}(S_x+S_y)+\frac{\varphi_m(x)-\varphi_m(y)}{2}(S_x-S_y)\\ &= E_m(x,y)+O_m(x,y)\; .
+\varphi_m(x)S_x+\varphi_m(y)S_y&=\frac{\varphi_m(x)+\varphi_m(y)}{2}(S_x+S_y)+\frac{\varphi_m(x)-\varphi_m(y)}{2}(S_x-S_y)\\ &= E_m(x,y)+O_m(x,y)\; .
 \end{align}
-Note that $[E_m(x,y),O_m(x,y)]=0$ and $E_m(x,y)$ generates the same rotation at $x-$ and $y-$coordinates and \begin{align}\begin{split}
-U_{\phi}(m)^*\phi(x,y)U_{\phi}(m)=&\exp(i O_m(x,y))\exp(i E_m(x,y))\phi(x,y)\\ &\cdot \exp(-iE_m(x,y))\exp(-i O_m(x,y))\end{split}\\
-=& \exp(iO_m(x,y))\phi(x,y)\exp(-i O_m(x,y))\; .
+Note that $[E_m(x,y),O_m(x,y)]=0$ and $E_m(x,y)$ generates the same rotation at $x-$ and $y-$coordinates and thus\begin{align}\begin{split}
+U_{\phi}(m)^*\Phi(x,y)U_{\phi}(m)=&\exp(i O_m(x,y))\exp(i E_m(x,y))\Phi(x,y)\\ &\cdot \exp(-iE_m(x,y))\exp(-i O_m(x,y))\end{split}\\
+=& \exp(iO_m(x,y))\Phi(x,y)\exp(-i O_m(x,y))\; .
 \end{align}
 Because \begin{align}
-\exp(i E_m(x,y))\phi(x,y)\exp(-i E_m(x,y))=\alpha_{\frac{1}{2}(\varphi_m(x)+\varphi_m(y))}(\phi(x,y))=\phi(x,y)\; .
+\exp(i E_m(x,y))\Phi(x,y)\exp(-i E_m(x,y))=\alpha_{\frac{1}{2}(\varphi_m(x)+\varphi_m(y))}(\phi(x,y))=\Phi(x,y)\; .
 \end{align}
 Hence one can expand that expression to \begin{align}
-U_{\phi}(m)^*\phi(x,y)U_{\phi}(m) = \phi(x,y)=\sum_{k=1}^{\infty} \frac{i^k}{k!}[O_m(x,y),[O_m(x,y),[\cdots[O_m(x,y),\phi(x,y)]\cdots]\; . \label{eqn::merminproof}
+U_{\phi}(m)^*\Phi(x,y)U_{\phi}(m) - \Phi(x,y)=\sum_{k=1}^{\infty} \frac{i^k}{k!}[O_m(x,y),[O_m(x,y),[\cdots[O_m(x,y),\Phi(x,y)]\cdots]\; . \label{eqn::merminproof}
 \end{align}
 Introducing the following notation \begin{align}
-U_{\phi}(m)^*\delta(U_{\phi}(m))+U_{\phi}(m)\delta(U_{\phi}(m)^*)=i\sum_{x,y}\Delta_m(x,y)l\; ,
+U_{\phi}(m)^*\delta(U_{\phi}(m))+U_{\phi}(m)\delta(U_{\phi}(m)^*)=i\sum_{x,y}\Delta_m(x,y)\; ,
 \end{align}
 and observe $U_{\phi}(m)\delta(U_{\phi}(m)^*)=U_{-\phi}(m)^*\delta(U_{-\phi}(m))$ and  that $O_m(x,y)$ is odd under $\phi\rightarrow -\phi$ so that all terms of odd order cancel out, yielding \begin{align}
-\| \Delta_m(x,y)\| \leq 2 \sum_{k\geq 1} \frac{1}{(2k)!}\left(\frac{\varphi_m(x)-\varphi_m(y)}{2}\right)^{2k} \| \mathrm{ad}_{S_x-S_y}^{2k}(\phi(x,y))\|\; ,
+\| \Delta_m(x,y)\| \leq 2 \sum_{k\geq 1} \frac{1}{(2k)!}\left(\frac{\varphi_m(x)-\varphi_m(y)}{2}\right)^{2k} \| \mathrm{ad}_{S_x-S_y}^{2k}(\Phi(x,y))\|\; ,
 \end{align}
 with \begin{align}
-\| \mathrm{ad}_{S_x-S_y}^{2k}(\phi(x,y))\| &\leq 2^{2k}(2\| S\| )^{2k}\|\phi(x,y)\|\\
-|\varphi_m(x)-\varphi_m(y)|^2&\leq |\phi|^{2k}\left(\frac{d(x,y)}{m}\right)^2 \quad \text{since} \\|\varphi_m(x)-\varphi_m(y)\|&\leq \|\phi\| \text{min}\left\{1,\frac{d(x,y)}{m}\right\}
+\| \mathrm{ad}_{S_x-S_y}^{2k}(\Phi(x,y))\| &\leq 2^{2k}(2\| S\| )^{2k}\|\Phi(x,y)\|\\
+|\varphi_m(x)-\varphi_m(y)|^{2k}&\leq |\phi|^{2k}\left(\frac{d(x,y)}{m}\right)^2 \quad \text{since} \\|\varphi_m(x)-\varphi_m(y)|&\leq |\phi| \text{min}\left\{1,\frac{d(x,y)}{m}\right\}
 \end{align}
 Now one has $|\Lambda_m|=(2m+1)^2$ which cancels out the $1/m^2$ and in total obtains the bound on Eq. \eqref{eqn::merminproof} of \begin{align}
-\sum_{\mathclap{x,y\in\mathbb{Z}^2\setminus\mathcal{N}_m}}\|\Delta_m(x,y)\| \leq \frac{4 e^{2\|S\|\|\phi\|}}{m^2}\sum_{x\in\Lambda_m}\sum_{y\in\mathbb{Z}^2}\|\phi(x,y)\| d(x,y)^2 \leq 52 C e^{2\|S\|\phi}\; ,
+\sum_{\mathclap{x,y\in\mathbb{Z}^2\setminus\mathcal{N}_m}}\|\Delta_m(x,y)\| \leq \frac{4 e^{2\|S\||\phi|}}{m^2}\underbrace{\sum_{x\in\Lambda_m}\sum_{y\in\mathbb{Z}^2}}_{\mathclap{\leq (2m+1)^2\sup_{x\in\mathbb{Z}^2}\sum_{y\in\mathbb{Z}^2}}}\|\Phi(x,y)\| d(x,y)^2 \leq 36 C e^{2\|S\|\phi}\; ,
 \end{align}
-and thus we have a bound that is uniform in $m$. Since $\alpha_{\pi}^2=\mathrm{id}$ and $\omega\circ \alpha_{\pi}^2=\omega\forall \omega$ (assumption (B')), by the previous theorem one has $\omega\circ\alpha_{\pi}=\omega \forall \omega$ $(\tau,\beta)$-KMS state. Recursively one thus finds $\omega\circ\alpha_{\pi/2n}=\omega \forall n,\omega$. But $\{\phi\in[0,2\pi):\phi=\sum_{n=0}^N a_n\left(\frac{\pi}{2n}\right)\mathrm{mod}~2\pi:a_n\in\mathbb{Z}, N\in\mathbb{N}\}=D$ is dense in $[0,2\pi)$ for any $A\in\mathcal{A}$: $\phi\mapsto\xi_A(\phi)=\omega(\alpha_{\phi}(A)-A)$ is continuous. Since $\xi_A\Gamma_D=0$, we conclude $\xi_A\equiv 0$ on $[0,2\pi)$.
+and thus we have a bound that is uniform in $m$, which gives us the bound needed for assumption (B'). We furthermore need symmtery invariance of the states under $\alpha^2$ to follow that they are $\alpha-$invariant as well. Since $\alpha_{\pi}^2=\mathrm{id}$ and $\omega\circ \alpha_{\pi}^2=\omega$ for all $(\tau,\beta)$-KMS states one thus finds by the theorem that $\omega\circ\alpha_{\pi}=\omega$ for all $(\tau,\beta)$-KMS states. Recursively $\omega\circ\alpha_{\pi/2n}=\omega \forall n,\omega$. But $\{\phi\in[0,2\pi):\phi=\sum_{n=0}^N a_n\left(\frac{\pi}{2n}\right)\mathrm{mod}~2\pi:a_n\in\mathbb{Z}, N\in\mathbb{N}\}=D$ is dense in $[0,2\pi)$. For any $A\in\mathcal{A}$: $\phi\mapsto\xi_A(\phi)=\omega(\alpha_{\phi}(A)-A)$ is continuous. Since $\xi_A|_D=0$, we conclude $\xi_A\equiv 0$ on $[0,2\pi)$.
 \end{proof}
 Now turning to higher dimensions similar general proofs have not been found yet and are the big open problems of statistical physics. What has been found for $\nu\geq 3$ is symmetry breaking for interacting systems in the antiferromagnetic Heisenberg-model (Dyson-Lieb-Simon, '78) \begin{align}
 H_1 = \sum_{|x-y|=1}(S_x^1S_y^1+S_x^2S_y^2+S_x^3S_y^3)\; .
@@ -1246,6 +1275,6 @@ where $E(\xi)\sim |\xi|^2$ as $|\xi|\rightarrow 0$ if $\nu\geq 3$, the integral 
 if $\beta^{-1}$ is small enough. One finds long range order, i.e. \begin{align}\lim_{|x|\rightarrow\infty}\liminf_{|\Lambda|\rightarrow\infty} (-1)^{|x|}\omega_{\beta,\Lambda}(S_0^3S_x^3)>0\end{align}whenever $\nu\geq 3$ and $\beta^{-1}$ is small enough. This implies that the limiting states cannot be invariant under rotation. The key element of this proof really is the infrared bounds. Let $C_{\Lambda}(x)=(-1)^{|x|}\omega_{\beta,\Lambda}(S_0^3S_x^3)$ then the finiteness of the following was the clue to the proof \begin{align}
 \frac{1}{|\Lambda|}\sum (-1)^{|x|}\omega_{\beta,\Lambda}(S_0^3S_x^3)=\hat{C}_1(0)=C_1(0)-\sum_{\xi\in\Lambda^*\setminus\{0\}}\hat{C}_{\Lambda}(\xi)\; ,
 \end{align}
-so one needs to control the amplitude of the small $\xi$ component of the correlation function.
+so one needs to control the amplitude of the small $\xi$ component of the correlation function. The ferromagnetic case though, is still completely open!
 \backmatter
 \end{document}
