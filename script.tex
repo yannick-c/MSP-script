@@ -249,14 +249,14 @@ such that $\omega(A^*A)\geq 0$ (positivity) and $\|\omega \| :=\sup \frac{\|\ome
 		\item In the quantum mechanic setting, any normalized vector $\psi\in\mathcal{H}$ defines a state by \begin{align}\omega_{\psi}:\mathcal{A}&\longrightarrow \mathbb{C}\\
 		A&\longmapsto \langle \psi, A\psi\rangle \; .\end{align}
 		\item Also any density matrix $\varrho = \varrho^*\in \mathcal{L}(\mathcal{H})$ defines a state by \begin{align}
-		\omega_{\varrho}:A&\longrightarrow \mathbb{C}\\
+		\omega_{\varrho}:\mathcal{A}&\longrightarrow \mathbb{C}\\
 		A&\longmapsto \omega_{\rho}(A)=\mathrm{Tr}(\varrho A) \qquad (\mathrm{Tr}(\varrho)=1) \; .
 		\end{align}
 		\item If $\mathds{1}\in\mathcal{A}$, then $\omega$ is normalized $\Leftrightarrow$ $\omega(\mathds{1})=1$.
 		\end{itemize}
 \end{remarks}
 \end{enumerate}
-It turns out that $\mathcal{A}$ may have inequivalent representations, corresponding to thermodynamically different situations. A representation of the $C^*$-algebra $A$ on a Hilbert-space $\mathcal{H}$ is a $*$-morphisms
+It turns out that $\mathcal{A}$ may have inequivalent representations, corresponding to thermodynamically different situations. This is why $C^*$-algebras are useful, the different phases of the same physical system can be expressed through a single algebra. A representation of the $C^*$-algebra $\mathcal{A}$ on a Hilbert-space $\mathcal{H}$ is a $*$-morphisms
 $\pi:\mathcal{A}\longrightarrow \mathcal{L}(\mathcal{H})$, namely \begin{align}
 \pi(A\cdot B)&=\pi(A)\pi(B) \\
 \pi(A+\lambda B)&=\pi(A)+\lambda\pi(B)\\
@@ -268,19 +268,29 @@ U:\mathcal{H}_1\rightarrow \mathcal{H}_2 \text{ s.t. } U\pi_1(A)=\pi_2(A)U\quad 
 Now given a $\pi$ on $\mathcal{H}$ and any normalized vector $\xi\in\mathcal{H}$, then the map \begin{align}
 \omega_{\xi}:\mathcal{A}&\longrightarrow \mathbb{C}\qquad \omega_{\xi}(A)=\langle\xi,\pi(A)\xi\rangle \; ,
 \end{align}
-defines a state on the algebra. Given a state $\omega$ on $\mathcal{A}$, there exists a $\mathcal{H}_{\omega}$, a representation $\pi_{\omega}:\mathcal{A}\rightarrow \mathcal{H}_{\omega}$ and a normalized $\Omega_{\omega}\in\mathcal{H}_ra{\omega}$ such that \begin{align}
+defines a state on the algebra. Given a state $\omega$ on $\mathcal{A}$, there exists a $\mathcal{H}_{\omega}$, a representation $\pi_{\omega}:\mathcal{A}\rightarrow \mathcal{H}_{\omega}$ and a normalized $\Omega_{\omega}\in\mathcal{H}_{\omega}$ such that \begin{align}
 \omega(A)=\langle\Omega_{\omega},\pi_{\omega}(A)\Omega_{\omega}\rangle \quad \text{''GNS construction''.}
 \end{align}
-We will be mainly using two topologies \begin{enumerate}
-	\item In $\mathcal{A}$: $A_n\rightarrow A$ if $\|A_n-A\|\rightarrow 0$. 
-	\item In a representation where $\mathcal{A}$ is represented as $\mathcal{L}(\mathcal{H})$ there: uniform convergence, strong convergence, weak convergence apply as usual, outside of representations, these terms do not make sense.
-\end{enumerate}
+We have the following topologies \begin{itemize}
+\item For the abstract algebra we have only norm convergence \begin{align}
+A_n\rightarrow A\text{ in }\mathcal{A}\text{ if }\|A_n-A\|\rightarrow 0\; .
+\end{align}
+\item In a representation of $\mathcal{A}$ as $\mathcal{L}(\mathcal{H})$ the usual topologies of uniform convergence, strong convergence, weak convergence apply as usual, outside of representations, these terms do not make sense.
+\item For states: \begin{enumerate}
+\item Norm: \begin{align}
+\omega_n\rightarrow\omega \text{ if } \|\omega_n-\omega\|\rightarrow 0\; .
+\end{align}
+\item Weak-$*$ topology: \begin{align}
+\omega_n\overset{*}{\rightarrow}\omega \text{ if } |\omega_n(A)-\omega(A)|\rightarrow 0 \text{ for all } A\in\mathcal{A}\;. 
+\end{align}
+This is different from the strong case as there is no uniformity in $A$. This is a very important notion, as this is very much the convergence of the thermodynamic limit (see section \ref{sec::kms_states} and exercises): Let $\omega_k$ be an equilibrium state in a finite volume $\Lambda_k$, with $\Lambda_k\rightarrow\mathbb{R}^3$ as $k\rightarrow \infty$ and let $\omega$ be an equilibrium state in the infinite volume (so-called KMS-state), then $\omega_n\overset{*}{\rightarrow}\omega$ if the expectation value of any local observable in $\omega_k$ converges. \end{enumerate}
+\end{itemize}
 \begin{remarks}
 	On the set of states over $\mathcal{A}$, designated by $\varepsilon(\mathcal{A})$, one has \begin{itemize}
 		\item $\varepsilon(\mathcal{A})$ is a convex set. $\omega_1,\omega_2\in\varepsilon(\mathcal{A})$ then $\omega=\lambda\omega_1+\mu\omega_2\in\varepsilon(\mathcal{A})$.
 		\item $\varepsilon(\mathcal{A})$ is weakly-$*$ compact (if $\mathcal{A}$ has an identity), namely every sequence $(\omega_n)_{n\in\mathcal{N}}$ of states in $\mathcal{A}$ has convergent subsequences (in the weak-$*$-topology) $\exists(n_k)_{k\in\mathcal{N}}:\omega_{n_k}(A)\rightarrow \overline{\omega}(A)$.
 	\end{itemize}
-In particular: A sequence of finite volume thermal equilibrium states always have infinite-volume limit points. As we shall see later, the uniqueness of the infinity point can be takes as a characterization of phase transitions.
+In particular: A sequence of finite volume thermal equilibrium states always have infinite-volume limit points. As we shall see later, the uniqueness of the infinity point can be taken as a characterization of phase transitions.
 \end{remarks}
 \chapter{Ideal gases}
 The ideal gas is a gas of non-interacting particles. The thermodynamic limit (TDL) is usually obtained by taking $N$ particles in a  finite volume $\Lambda\in \mathbb{R}^d$ and letting $N\rightarrow\infty$, $\Lambda\rightarrow\mathbb{R}^d$ such that \begin{align}
@@ -290,11 +300,11 @@ There are two types of indistinguishable particles in nature \begin{enumerate}
 	\item Bosons have a symmetric wave function.
 	\item Fermions have an antisymmetric wavefunction.
 \end{enumerate}
-A Hilbert space carrying an arbitrary number of particles is a Fock space built upon the one-particle Hilbert space. Action of the symmetric group $S_n$ on $\otimes^N\mathcal{H}$ is then given by \begin{align}
+A Hilbert space carrying an arbitrary number of particles is a Fock space built upon the one-particle Hilbert space. Action of the symmetric group $S_N$ on $\otimes^N\mathcal{H}$ is then given by \begin{align}
 P_{\sigma}:\psi_1\otimes \cdots \otimes \psi_N \longmapsto {\psi}_{\sigma^{-1}(1)}\otimes \cdots \otimes \psi_{\sigma^{-1}(N)}\; ,
 \end{align}
-for any $\sigma\in S_n$ (check $P_{\sigma\sigma'}=P_{\sigma}\circ P_{\sigma'}$ and so on) and one defines the space of (anti-)symmetric wavefunctions as \begin{align}
-\mathcal{H}_{s/a}^{N}&:=\{\psi\in\otimes^N\mathcal{H}:P_{\sigma}\psi=\delta(\sigma)\psi \text{ for any } \sigma\in S_n\}\; ,\\\delta(\sigma)&=\begin{cases}
+for any $\sigma\in S_N$ (check $P_{\sigma\sigma'}=P_{\sigma}\circ P_{\sigma'}$ and so on). With this one defines the space of (anti-)symmetric wavefunctions as \begin{align}
+\mathcal{H}_{s/a}^{N}&:=\{\psi\in\otimes^N\mathcal{H}:P_{\sigma}\psi=\delta(\sigma)\psi \text{ for any } \sigma\in S_N\}\; ,\\\delta(\sigma)&=\begin{cases}
 1 &\text{ if ''s'' (Bosons)}\\
 -1 &\text{ if ''a'' (Fermions)}
 \end{cases}\; .
@@ -333,7 +343,7 @@ The core concepts of Fock spaces are those of annihilation and creation operator
 	\begin{itemize}
 		\item $b^*(\varphi)=(b(\varphi))^*$.
 		\item $\varphi\mapsto b(\varphi)$ is anti-linear, i.e. $\varphi\mapsto b^*(\varphi)$ is linear.
-		\item The following commutation law holds $Nb(\varphi)=b(\varphi)(N-1)$. 
+		\item The following commutation law holds $\mathcal{N} b(\varphi)=b(\varphi)(\mathcal{N} -1)$. 
 		\item If $U:\mathcal{H}\rightarrow\mathcal{H}$ is unitary: $\Gamma(U)b^*(\varphi)\Gamma(U)^*=b^*(U\varphi)$.
 		\item The following commutation relations hold on $\mathcal{F}_s(\mathcal{H})$ (CCR) \begin{align}
 		[b(\varphi),b^*(\psi)]&=\langle\varphi,\psi\rangle\mathds{1}\\
@@ -378,12 +388,12 @@ whenever $\exp(-\beta K_{\mu})\in I_1(\mathcal{F}_a(\mathcal{H}_1))$ (trace-clas
 \begin{example}
 	$\Lambda=[-L/2,L/2], \mathcal{H}_1=L^2(\Lambda), H=-\Delta_L$.
 
-\underline{But} $-\Delta$ on $\mathbb{R}^d$ has purely absolutely continuous spectrum so $\exp(\Delta)$ cannot be trace-class. Defining the activity Z as \begin{align}
+\underline{But} $-\Delta$ on $\mathbb{R}^d$ has purely absolutely continuous spectrum so $\exp(\Delta)$ cannot be trace-class. Defining the activity $z$ as \begin{align}
 z=e^{\beta\mu}\; ,
 \end{align}
 one can find the following relation \begin{align}
 \exp(-\beta K_{\mu})&=\Gamma(\exp(-\beta(H-\mu\mathds{1})))=z\Gamma(\exp(-\beta H))\\
-e^{-\beta K_{\mu}}b^{\#}(\varphi)&=zb^{\#}(e^{-\beta H}\varphi)e^{-\beta K_{\mu}}\label{eqn::hashtag_eqn}\; ,
+\Rightarrow e^{-\beta K_{\mu}}b^{\#}(\varphi)&=zb^{\#}(e^{-\beta H}\varphi)e^{-\beta K_{\mu}}\label{eqn::hashtag_eqn}\; ,
 \end{align}
 whereby the hashtag is a placeholder for nothing or dagger.
 \begin{prop}
@@ -445,7 +455,7 @@ We can limit ourselves to $\varphi,\psi\in C_c^{\infty}(\mathbb{R}^d)$, since $\
 		 \item Given $\beta,\mu$, the limit of $\omega_{\beta,\mu}^L$ exists and it is unique and $\omega_{\beta,\mu}$ defines the thermal equilibrium state on $CAR(L^2(\mathbb{R}^d))$.
 		 \item Density of the free Fermi gas \begin{align}
 		 \varrho(\beta,\mu)&=\lim_{L\rightarrow\infty}L^{-d}\sum_{n\geq 1} \omega_{\beta,\mu}^L(\underbrace{a^{\dagger}(\psi_n)a(\psi_n)}_{\mathcal{N}})\\
-		 &=(2\pi)^{d/2}\int \frac{ze^{-\beta}|\xi|^2}{1+ze^{-\beta|\xi|^2}}\mathrm{d}\xi\; ,
+		 &=(2\pi)^{d/2}\int \frac{ze^{-\beta|\xi|^2}}{1+ze^{-\beta|\xi|^2}}\mathrm{d}\xi\; ,
 		 \end{align}
 		 where $(\psi_n)_{n\in\mathcal{N}}$ is any basis of $L^2(\Lambda_L)$. This means that the momentum density distribution of the Fermi-gas is given by\begin{align}
 		 0\leq \frac{ze^{-\beta|\xi|^2}}{1+ze^{-\beta|\xi|^2}}\leq 1\; ,
@@ -508,7 +518,7 @@ This basically means that for bosons the Gibbs state exists only for those chemi
 \end{notes}
 giving us the following lemma which will be proven in the exercises \begin{lemma}
 Let $\Phi=(\varphi_1,\ldots,\varphi_m)$ and $B(\Phi):=b(\varphi_m)\cdots b(\varphi_1)e^{-\frac{\beta}{2}K_{\mu}}$. Then $B(\Phi)$ is closeable with bounded closure and $B(\Phi)\in I_2(\mathcal{F}(\mathcal{H}))$.\end{lemma}
-IT follows that for $\Psi=(\psi_1,\ldots,\psi_n)$, $\Phi=(\varphi_1,\ldots,\varphi_m)$, $B(\Psi)^*B(\Phi)\in I_1(\mathcal{F}_s(\mathcal{H}))$ and we \underline{define}\begin{align}
+It follows that for $\Psi=(\psi_1,\ldots,\psi_n)$, $\Phi=(\varphi_1,\ldots,\varphi_m)$, $B(\Psi)^*B(\Phi)\in I_1(\mathcal{F}_s(\mathcal{H}))$ and we \underline{define}\begin{align}
 \omega_{\beta,\mu}(b^*(\psi_1)\cdots b^*(\psi_n)b(\varphi_m)\cdots b(\varphi_1)):=\mathrm{Tr}(B(\Psi)^*B(\Phi))\;.
 \end{align}
 But this was just for details, for anything calculation related just use the above definition, combined with the relation\begin{align}
@@ -525,9 +535,8 @@ e^{-\frac{\beta K_{\mu}}{2}}b^*(\varphi)=b^*(e^{-\frac{\beta }{2}(H-\mu)}\varphi
 \begin{proof}
 	The calculation is harder than in the Fermion case since we cannot use the cyclic properties of the trace. We have to commute our way to the goal \begin{align}
 	\omega_{\beta,\mu}(b^*(\varphi)b(\psi))\overset{\eqref{eqn::boson_relation}}{=}&Z_{\beta,\mu}^{-1}\mathrm{Tr}\left(b^*(e^{-\frac{\beta}{2}(H-\mu)}\varphi)e^{-\beta K_{\mu}}b(e^{-\beta \frac{H-\mu}{2}}\psi)\right)\\
-	=~~&\omega_{\beta,\mu}(b(e^{-\frac{\beta}{2}(H-\mu)}\varphi)b^*(e^{-\frac{\beta}{2}(H-\mu)}\psi))\mid \text{use CCR}\\
-	=~~&\omega_{\beta,\mu}(b^*(e^{-\frac{\beta}{2}(H-\mu)}\varphi)b(e^{-\frac{\beta}{2}(H-\mu)}\psi))+\langle \psi, e^{-\beta (H-\mu)} \varphi\rangle\; .
-	\end{align}
+	=~~&\omega_{\beta,\mu}(b(e^{-\frac{\beta}{2}(H-\mu)}\psi)b^*(e^{-\frac{\beta}{2}(H-\mu)}\varphi))\mid \text{use CCR}\\
+	=~~&\omega_{\beta,\mu}(b^*(e^{-\frac{\beta}{2}(H-\mu)}\varphi)b(e^{-\frac{\beta}{2}(H-\mu)}\psi))+\langle \psi, e^{-\beta (H-\mu)} \varphi\rangle\; .	\end{align}
 	Iterating this identity n-times gives \begin{align}
 	\omega_{\beta,\mu}(b^*(\varphi)b(\psi))=&\omega_{\beta,\mu}\left(b^*(e^{-n\frac{\beta}{2}(H-\mu)}\varphi)b(e^{-n\frac{\beta}{2}(H-\mu)}\psi)\right)\\
 	+&\sum_{j=1}^{n}\langle \psi, e^{-j\beta(H-\mu)}\varphi\rangle\; .
@@ -553,7 +562,7 @@ e^{-\frac{\beta K_{\mu}}{2}}b^*(\varphi)=b^*(e^{-\frac{\beta }{2}(H-\mu)}\varphi
 		\end{align}
 	\end{theorem}
 \begin{proof}
-	Since the Weyl operators generate the whole algebra, it suffices to check the convergences on Weyl-operators $\omega_{\beta,\mu}^L(W(\psi))$. Bu the positive function \begin{align}
+	Since the Weyl operators generate the whole algebra, it suffices to check the convergences on Weyl-operators $\omega_{\beta,\mu}^L(W(\psi))$. But the positive function \begin{align}
 	x\mapsto \frac{1+e^{-\beta(x-\mu)}}{1-e^{-\beta(x-\mu)}}\qquad (x\geq \mu+C>\mu)
 	\end{align}
 	is bounded so that \begin{align}
@@ -583,7 +592,7 @@ Number of particles in the ground state \begin{align}
 so the density is constant. For non-ground states one finds ($\underline{n}\neq 0$) \begin{align}
 \mathcal{N}_{\underline{n},L}(\beta)=(z(L)^{-1}e^{\beta E_{\underline{n}}(L)}-1)^{-1}\leq (\beta E_{\underline{n}}(L))^{-1}\leq \mathrm{const. }~L^2\; .
 \end{align}
-Hence: If $d=3$, the ground state $\psi_0$ is the only macroscopically occupied state (i.e. $\mathcal{N}_{0,L}(\beta)\sim L^3$). Precisely this means: Let $k=k(\underline{n})=\frac{4\pi^2}{L^2}(n_1^2+n_2^2+n_3^2)$. For any $\varphi\in C_c^{\infty}(\mathbb{R}^3)$ one then finds \begin{align}
+Hence: If $d\geq 3$, the ground state $\psi_0$ is the only macroscopically occupied state (i.e. $\mathcal{N}_{0,L}(\beta)\sim L^3$). Precisely this means: Let $k=k(\underline{n})=\frac{4\pi^2}{L^2}(n_1^2+n_2^2+n_3^2)$. For any $\varphi\in C_c^{\infty}(\mathbb{R}^3)$ one then finds \begin{align}
 L^{-3}\sum_{\underline{n}}\mathcal{N}_{k(\underline{n}),L}(\beta)\varphi(k(\underline{n}))\rightarrow \int \mathcal{N}_s(\beta,\xi)\varphi(\xi)\mathrm{d}\xi\; ,
 \end{align}
 where  \begin{align}\mathcal{N}_s(\beta,\xi)&=\overline{\mathcal{N}}(\beta,\xi)+\varrho_0 \delta(\xi) \\
@@ -610,13 +619,13 @@ Now we want to take this into the TDL with $H_L=-\Delta_L$ with $H_L-\mu\geq C>0
 \omega_{\beta,\mu}^L\overset{*}{\longrightarrow}\omega_{\beta,\mu} \text{ with } \omega_{\beta,\mu}(W(\psi))=\exp\left(\frac{1}{4}\left\langle \psi,\frac{\mathds{1}+e^{-\beta(H-\mu)}}{\mathds{1}-e^{-\beta(H-\mu)}}\psi\right\rangle\right)\; ,
 \end{align}
 where $(H\psi)(x)=(2\pi)^{-d/2}\int\hat{\psi}(\xi)|\xi|^2\mathrm{d}\xi$. For the density (in this case) one finds as a limit \begin{align}
-\lim_{\mu\uparrow 0}\int\frac{e^{-\beta(|\xi|^2-\mu)}}{\mathds{1}-e^{-\beta(|\xi|^2-\mu)}}\mathrm{d}\xi = \int\frac{e^{-\beta|\xi|^2}}{\mathds{1}-e^{-\beta|\xi|^2}}\mathrm{d}\xi =: \varrho_{c}(\beta)\; ,
+\lim_{\mu\uparrow 0}\int\frac{e^{-\beta(|\xi|^2-\mu)}}{\mathds{1}-e^{-\beta(|\xi|^2-\mu)}}\mathrm{d}\xi = \int\frac{e^{-\beta|\xi|^2}}{\mathds{1}-e^{-\beta|\xi|^2}}\mathrm{d}\xi =: \varrho_{c}(\beta)\; ,\label{eqn::crit_rho}
 \end{align}
 in finite volume the integral discretizes again and one obtains (with the counter for the multidimensional Eigenstate indices $\underline{n}$)\begin{align}
-\varrho_{L}(\beta,Z)=\frac{1}{L^d}\sum_{\underline{n}}\frac{e^{-\beta(E_{\underline{n}}(L)-\mu)}}{\mathds{1}-e^{-\beta(E_{\underline{n}}(L)-\mu)}}\; ,
+\varrho_{L}(\beta,z)=\frac{1}{L^d}\sum_{\underline{n}}\frac{e^{-\beta(E_{\underline{n}}(L)-\mu)}}{\mathds{1}-e^{-\beta(E_{\underline{n}}(L)-\mu)}}\; ,
 \end{align}
 which diverges as $\mu$ goes towards the bottom of the spectrum. We confirm a second time that there is a difference in the order of limit taking. Let us look again at the periodic boundary conditions in the scaling limit, i.e. \begin{align}
-Z(L)=1-\frac{1}{\varrho L^d}\; ,
+z(L)=1-\frac{1}{\varrho L^d}\; ,
 \end{align}
 using the previously found Eq. \eqref{eqn::relation_nz} we have \begin{align}
 N_{\underline{0},L}(\beta)=\varrho_0L^d-1\; .
@@ -630,13 +639,14 @@ L^{-3}\sum_{\underline{n}}\mathcal{N}_{k(\underline{n}),L(\beta)}\varphi(k(\unde
 &=\text{singular part} + (2\pi)^3\int\frac{e^{-\beta|\xi|^2}}{\mathds{1}-e^{-\beta|\xi|^2}}\;.
 \end{align}
 So by this way of taking the limit (as before), we see that the TDL part is recovered plus a singular part given by $\delta$. In terms of densities one has \begin{align}
-\varrho_L(\beta,Z(L))\rightarrow\varrho_C(\beta)(2\pi)^{-3}+\varrho_C\; .
+\varrho_L(\beta,Z(L))\rightarrow\varrho_C(\beta)+\varrho_0\; ,
 \end{align}
-A more ''physical'' TDL would be gotten by fixing $\overline{\varrho}$ (here again with Dirichlet boundary conditions). Let $z_L$ be the solution of $\varrho(\beta,Z)=\overline{\varrho}$. If $\overline{\varrho}\leq \varrho_C(\beta)$. Let $\overline{Z}$ be the solution of $\varrho(\beta,Z)=\overline{Z}$. \begin{prop}
+where $\varrho_0$ is the condensate density and $\varrho_C(\beta)$ given by Eq. \eqref{eqn::crit_rho}.
+A more ''physical'' TDL would be gotten by fixing $\overline{\varrho}$ (here again with Dirichlet boundary conditions). Let $z_L$ be the solution of $\varrho(\beta,z)=\overline{\varrho}$. If $\overline{\varrho}\leq \varrho_C(\beta)$. Let $\overline{z}$ be the solution of $\varrho(\beta,z)=\overline{z}$. \begin{prop}
 	Let $d\geq 3$. $0<\overline{\varrho}<\infty$, $0<\beta<\infty$: \begin{enumerate}
-		\item If $\overline{\varrho}<\varrho_C(\beta)$, then $\lim_{L\rightarrow\infty}Z_L=\overline{Z}$.
-		\item If $\overline{\varrho}>\varrho_C(\beta)$, then $\lim_{L\rightarrow\infty}Z_L=1$ (as in scaling limit) and \begin{align}
-		L^{-d}\frac{Z_Le^{-\beta E_{\underline{1}}(L)}}{1-Z_Le^{-\beta E_{\underline{1}}(L)}}\; \longrightarrow \overline{\varrho}-\varrho_C(\beta)\qquad E_{\underline{1}}\text{ is GS in Dirichlet B.C}\; .
+		\item If $\overline{\varrho}<\varrho_C(\beta)$, then $\lim_{L\rightarrow\infty}z_L=\overline{z}$.
+		\item If $\overline{\varrho}>\varrho_C(\beta)$, then $\lim_{L\rightarrow\infty}z_L=1$ (as in scaling limit) and \begin{align}
+		L^{-d}\frac{z_Le^{-\beta E_{\underline{1}}(L)}}{1-z_Le^{-\beta E_{\underline{1}}(L)}}\; \longrightarrow \overline{\varrho}-\varrho_C(\beta)\qquad (E_{\underline{1}}\text{ is GS in Dirichlet B.C})\; .
 		\end{align}
 	\end{enumerate}
 \end{prop}
@@ -646,23 +656,23 @@ A more ''physical'' TDL would be gotten by fixing $\overline{\varrho}$ (here aga
 \begin{proof}
 	Note, that the exact convex analytics are not carried out here, so any convexity claim might be untrivial.\begin{enumerate}
 	\item $\frac{az}{1-az}$ is convex for any $a>0$, so is $z\mapsto \varrho_L(\beta,z)$ and hence \begin{align}
-	\frac{\partial \varrho_L}{\partial Z}(\beta, Z_2)\leq \frac{\varrho_{L}(\beta,Z_1)-\varrho_L(\beta,Z_2)}{Z_1-Z_2}\leq \frac{\partial \varrho}{\partial z}(\beta,z_1)\;,
+	\frac{\partial \varrho_L}{\partial z}(\beta, z_2)\leq \frac{\varrho_{L}(\beta,z_1)-\varrho_L(\beta,z_2)}{z_1-z_2}\leq \frac{\partial \varrho}{\partial z}(\beta,z_1)\;,
 	\end{align}
 	for $z_2<z_1$. Moreover, \begin{align}\partial_z\frac{az}{1-az}=\frac{1}{z}\frac{az}{1-az}\frac{1}{1-az}\geq \frac{1}{z}\left(\frac{az}{1-az}\right)\; ,\end{align}
 
 so that \begin{align}
-\frac{\partial \varrho_L}{\partial Z}(\beta,Z_2)\geq \frac{1}{Z_L}\varrho_L(\beta,Z_L)\qquad [\text{use Dirichlet B.C.}]\; .
+\frac{\partial \varrho_L}{\partial z}(\beta,z_2)\geq \frac{1}{z_L}\varrho_L(\beta,z_L)\qquad [\text{use Dirichlet B.C.}]\; .
 \end{align}
-Also by Riemann approximation $\varrho(\beta,Z)\leq \varrho(\beta,Z)$ so that $Z_L\geq \overline{Z}$.  Combine these results with $Z_1=Z_L, Z_2=\overline{Z}$ to obtain \begin{align}
-\frac{\varrho}{\overline{Z}}\leq \frac{\overline{\varrho}-\varrho_{L}(\beta,\overline{Z})}{Z_L-\overline{Z}}\; ,
+Also by Riemann approximation $\varrho_L(\beta,z)\leq \varrho(\beta,z)$ so that $z_L\geq \overline{z}$.  Combine these results with $z_1=z_L, z_2=\overline{z}$ to obtain \begin{align}
+\frac{\varrho}{\overline{z}}\leq \frac{\overline{\varrho}-\varrho_{L}(\beta,\overline{z})}{z_L-\overline{z}}\; ,
 \end{align}
 namely \begin{align}
-0\leq Z_L-\overline{Z}\leq \frac{\overline{Z}(\overline{\varrho}-\varrho_{L}(\beta,\overline{Z}))}{\varrho_L(\beta,\overline{Z})}\;.
+0\leq z_L-\overline{z}\leq \frac{\overline{z}(\overline{\varrho}-\varrho_{L}(\beta,\overline{z}))}{\varrho_L(\beta,\overline{z})}\;.
 \end{align}
-\item Assume $Z_L\leq 1$. Then \begin{align}
-\varrho_C(\beta)<\overline{\varrho}=\varrho_L(\beta,Z_L)\leq \varrho(\beta,Z_L)\leq \varrho(\beta,1)=\varrho_C(\beta)\; ,
+\item Assume $z_L\leq 1$. Then \begin{align}
+\varrho_C(\beta)<\overline{\varrho}=\varrho_L(\beta,z_L)\leq \varrho(\beta,z_L)\leq \varrho(\beta,1)=\varrho_C(\beta)\; ,
 \end{align}
-which is a contradiction. Hence, $Z_L>1$ and $1<Z_L<e^{-\beta E_{\underline{1}}(L)}\rightarrow 1 \quad (L\rightarrow\infty)$.
+which is a contradiction. Hence, $z_L>1$ and $1<z_L<e^{-\beta E_{\underline{1}}(L)}\rightarrow 1 \quad (L\rightarrow\infty)$.
 \end{enumerate}
 \end{proof}
 \begin{theorem}
@@ -782,7 +792,7 @@ An $A\in\mathcal{A}$ is called analytic for $\tau$ if $t\mapsto \tau_t(\mathcal{
 	\end{align}
 which are the KMS boundary conditions. This extends to all $A,B\in\mathcal{A}$ by density and a bit of complex analysis.\end{proof}
 We can now come to the first physical property, which serves as a first justification to see KMS states as the generalization of equilibrium states. \begin{prop}
-	If $\omega$ is a $(\tau,\beta)$-KMS state. Then $\omega\circ \tau_t=0$is constant in time.. I.e. the equilibrium state is invariant under time evolution.
+	If $\omega$ is a $(\tau,\beta)$-KMS state. Then $\omega\circ \tau_t=0$ is constant in time. I.e. the equilibrium state is invariant under time evolution.
 \end{prop}
 \begin{proof}
 	Let $A\in\mathcal{A}$ be analytic for $\tau$. Then $g(z):=\omega(\tau_z(A))$ is entire analytic and $g(z+i\beta)=\omega(\mathds{1}\tau_{i\beta}(\tau_z(A))=\omega(\tau_z(A)\mathds{1})=g(z)$. Hence: $g$ is periodic in the imaginary direction. Moreover \begin{align}
@@ -1151,13 +1161,13 @@ We need to translate all our expressions into the language of these systems now
 \end{align}
  Define the algebra of local observables as 
 \begin{align} 
-\mathcal{A}_{loc}=\bigcup_{\Lambda\in\mathcal{F}(A)}A_{\Lambda}\; .
+\mathcal{A}_{loc}=\bigcup_{\Lambda\in\mathcal{F}(A)}A_{\Lambda}\;.
 \end{align}
-and the complete algebra as $\mathcal{A}=\overline{\mathcal{A}_{loc}}^{\|\cdot\|}$, which is a $C^*$-algebra with an identity. \\
+and the complete algebra as $\mathcal{A}=\overline{\mathcal{A}_{loc}}^{\|\cdot\|}$, which is a $C^*$-algebra with an identity.
 \item Any state $\omega$ on $\mathcal{A}$ is \textit{locally normal}, namely \begin{align}
 \omega\mid_{\mathcal{A}_{\Lambda}}=\mathrm{Tr}(\varrho_{\Lambda}^{\omega}~\cdot~),\quad  \Lambda\in\mathcal{F}(\Gamma)\;,
 \end{align}
-i.e. one can think of $\omega$ on $\mathcal{A}_{loc}$ as the family of density matrices $\{\varrho_{\Lambda}^{\omega}:\Lambda\in\mathcal{F}(\Gamma)\}$.\\
+i.e. one can think of $\omega$ on $\mathcal{A}_{loc}$ as the family of density matrices $\{\varrho_{\Lambda}^{\omega}:\Lambda\in\mathcal{F}(\Gamma)\}$.
 \item Dynamics are given by maps\begin{align}
 \Phi:\mathcal{F}(\Gamma)&\longrightarrow \mathcal{A}\\
 X &\longmapsto \Phi(X)=\Phi(X)=\Phi(X)^*\in\mathcal{A}_X\; ,
@@ -1243,10 +1253,10 @@ U_{\phi}(m)^*\Phi(x,y)U_{\phi}(m)=&\exp(i O_m(x,y))\exp(i E_m(x,y))\Phi(x,y)\\ &
 =& \exp(iO_m(x,y))\Phi(x,y)\exp(-i O_m(x,y))\; .
 \end{align}
 Because \begin{align}
-\exp(i E_m(x,y))\Phi(x,y)\exp(-i E_m(x,y))=\alpha_{\frac{1}{2}(\varphi_m(x)+\varphi_m(y))}(\phi(x,y))=\Phi(x,y)\; .
+\exp(i E_m(x,y))\Phi(x,y)\exp(-i E_m(x,y))=\alpha_{\frac{1}{2}(\varphi_m(x)+\varphi_m(y))}(\phi(x,y))=\Phi(x,y)\;.
 \end{align}
-Hence one can expand that expression to \begin{align}
-U_{\phi}(m)^*\Phi(x,y)U_{\phi}(m) - \Phi(x,y)=\sum_{k=1}^{\infty} \frac{i^k}{k!}[O_m(x,y),[O_m(x,y),[\cdots[O_m(x,y),\Phi(x,y)]\cdots]\; . \label{eqn::merminproof}
+Hence one can expand that expression to \begin{align}\begin{split}
+U_{\phi}(m)^*\Phi(x,y)U_{\phi}(m) &- \Phi(x,y)=\\&\sum_{k=1}^{\infty} \frac{i^k}{k!}[O_m(x,y),[O_m(x,y),[\cdots[O_m(x,y),\Phi(x,y)]\cdots]\; .\end{split} \label{eqn::merminproof}
 \end{align}
 Introducing the following notation \begin{align}
 U_{\phi}(m)^*\delta(U_{\phi}(m))+U_{\phi}(m)\delta(U_{\phi}(m)^*)=i\sum_{x,y}\Delta_m(x,y)\; ,
