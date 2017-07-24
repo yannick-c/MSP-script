@@ -728,12 +728,13 @@ GNS representatoin: $\omega_{\beta}$ at $\overline{\varrho}>\varrho_C(\beta):(\m
 	\begin{align}
 	f(y)-f(x)-(y-x)f'(y)=-\frac{1}{2}(x-y)^2f''(z)\geq \frac{1}{2}(x-y)^2\;\label{eqn::proof_of_ineq}
 	\end{align}
-	Hence we have the following relation \begin{align}
-	\mathrm{Tr}(P_iQ_j(f(B)-f(A)+(A-B)f'(B)-\frac{1}{2}(A-B)^2\\=(f(\beta_i)-f(\alpha_j)+(\alpha_j-\beta_i)f'(\beta_i)-\frac{1}{2}(\alpha_j-\beta_i)^2)\mathrm{Tr}(P_iQ_j)\overset{\eqref{eqn::proof_of_ineq}}{\geq }0\; ,
+	Hence we have the following relation \begin{align}\begin{split}
+	\mathrm{Tr}&(P_iQ_j(f(B)-f(A)+(A-B)f'(B)-\frac{1}{2}(A-B)^2\\
+	&=(f(\beta_i)-f(\alpha_j)+(\alpha_j-\beta_i)f'(\beta_i)-\frac{1}{2}(\alpha_j-\beta_i)^2)\mathrm{Tr}(P_iQ_j)\overset{\eqref{eqn::proof_of_ineq}}{\geq }0\; ,\end{split}
 	\end{align}
-	which, when summing over i and j, gives \begin{align}
+	which, when summing over i and j, gives \begin{align}\begin{split}
 	0&\leq \mathrm{Tr}(-B\log B+A\log A +(A-B)(-\mathds{1}-\log B)-\frac{1}{2}(A-B)^2\\
-	&=\mathrm{Tr}(A\log A-A\log B-\frac{1}{2}(A-B)^2)\;,
+	&=\mathrm{Tr}(A\log A-A\log B-\frac{1}{2}(A-B)^2)\;,\end{split}
 	\end{align}
 	whereby $\mathrm{Tr}(A)=\mathrm{Tr}(B)=1$ was used. This proves the lemma.
 \end{proof}
@@ -764,7 +765,7 @@ Let $H$ be a matrix, so that $\tau_t(A)=e^{itH}Ae^{-itH}$ has an analytic extens
 		if Eq. \eqref{eqn::KMS_condition} holds, then $\varrho$ is diagonal in the eigenbasis with $\langle \psi_i,\varrho\psi_i\rangle = Ce^{-\beta E_i}$.
 	\end{itemize}
 \end{proof}
-\begin{notes}The KMS condition relies only on the analiticity of $\tau_z(\beta)$ in a strip $S_{\beta}:=\{z\in \mathbb{C}:0<\mathrm{Im}(z)<\beta\}$ with continuous extension to $\overline{S}_{\beta}$.
+\begin{notes}The KMS condition relies only on the analiticity of $\tau_{z\beta}$ in a strip $S_{\beta}:=\{z\in \mathbb{C}:0<\mathrm{Im}(z)<\beta\}$ with continuous extension to $\overline{S}_{\beta}$.
 	\end{notes}
 \begin{definition}
 	Let $(A,\tau)$ be a $C^*$-dynamical system, and $0<\beta,\infty$. A state $\omega$ on $\mathcal{A}$ is a $(\tau,\beta)$-KMS state if for any $A,B\in \mathcal{A}$ there exists a function $\mathcal{F}_{\beta}(A,B;t)$, which is analytic in $S_{\beta}$, continuous on $\overline{S}_{\beta}$ and satisfying the \textit{KMS boundary conditions} for $t\in\mathbb{R}$ \begin{align}
@@ -786,13 +787,13 @@ An $A\in\mathcal{A}$ is called analytic for $\tau$ if $t\mapsto \tau_t(\mathcal{
 	$\Rightarrow$-direction: Let $A,B$ be analytic, i.e. $A,B\in\mathcal{A}_{\tau}$, then  $G(z)=\omega(A\tau_z(B))$ is analytic in $z$ and $G(t)=\omega(A\tau_t(B))=\mathcal{F}_{\beta}(A,B,t),t\in\mathbb{R}$, which follows by the KMS-boundary conditions. Hence $z\mapsto G(z)-\mathcal{F}_{\beta}(A,B;z)$ is analytic in $S_{\beta}$ (which is only the disk with positive imaginary part) and continuous in $\overline{S}_{\beta}$ and it vanishes on $\mathbb{R}$. By the Schwarz reflection-theorem it can be extended to an analytic function on $\{z\in\mathbb{C}:|\mathrm{Im}z|<\beta\}$, which still vanishes on $\mathbb{R}\subset \{z\in\mathbb{C}:|\mathrm{Im}~z|<\beta\}$. Hence, it vanishes everywhere and by continuity to $\{z\in\mathbb{C}||\mathrm{Im}z|\leq \beta\}$ it vanishes on the closed set as well. Hence \begin{align}
 	G(i\beta)=\mathcal{F}_{\beta}(A,B,i\beta)=\omega(BA) \qquad \text{by KMS B.C.}\;,
 	\end{align}
-	which concludes, since $G(i\beta)=\omega(A\tau_{i\beta}(\beta))$.\\Now to the $\Leftarrow$-direction. Let $A,B\in\mathcal{A}_{\tau}$. We have that $\mathcal{F}(A,B,z):=\omega(A\tau_z(B))$ is analytic on $\mathbb{C}$ and \begin{align}
+	which concludes, since $G(i\beta)=\omega(A\tau_{i\beta}(B))$.\\Now to the $\Leftarrow$-direction. Let $A,B\in\mathcal{A}_{\tau}$. We have that $\mathcal{F}(A,B,z):=\omega(A\tau_z(B))$ is analytic on $\mathbb{C}$ and \begin{align}
 	\mathcal{F}(A,B;t)&=\omega(A\tau_t(B))\\
 	\mathcal{F}(A,B;t+i\beta)&=\omega(A\tau_{i\beta}(\tau_t(B)))\overset{ass.}{=}\omega(\tau_t(B)A)\; ,
 	\end{align}
 which are the KMS boundary conditions. This extends to all $A,B\in\mathcal{A}$ by density and a bit of complex analysis.\end{proof}
 We can now come to the first physical property, which serves as a first justification to see KMS states as the generalization of equilibrium states. \begin{prop}
-	If $\omega$ is a $(\tau,\beta)$-KMS state. Then $\omega\circ \tau_t=0$ is constant in time. I.e. the equilibrium state is invariant under time evolution.
+	If $\omega$ is a $(\tau,\beta)$-KMS state. Then $\omega\circ \tau_t=\omega$ is constant in time. I.e. the equilibrium state is invariant under time evolution.
 \end{prop}
 \begin{proof}
 	Let $A\in\mathcal{A}$ be analytic for $\tau$. Then $g(z):=\omega(\tau_z(A))$ is entire analytic and $g(z+i\beta)=\omega(\mathds{1}\tau_{i\beta}(\tau_z(A))=\omega(\tau_z(A)\mathds{1})=g(z)$. Hence: $g$ is periodic in the imaginary direction. Moreover \begin{align}
@@ -802,7 +803,7 @@ We can now come to the first physical property, which serves as a first justific
 	Hence, $g$ is entire analytic and bounded, and by the Liouville theorem $g$ is constant. This extends to all of $\mathcal{A}$ by density.
 \end{proof}
 \begin{notes}
-As a technical side note: There is always a dense set of analytic elements.
+As a technical side note: There is always a dense set of analytic elements (see exercises).
 \end{notes}
 Now usually checking the KMS-conditions is a bit of a hassle but luckily there is an equivalent nice condition: \begin{theorem}[Energy-Entropy-Balance inquality (EEB)]
 	A state $\omega$ over $\mathcal{A}$ is a $(\tau,\beta)-$KMS state iff\begin{align} -i\beta\omega(A^*\delta(A))\geq \omega(A^*A)\log \frac{\omega(A^*A)}{\omega(AA^*)}\end{align}
@@ -845,13 +846,13 @@ whereby $\check{\cdot}$ indicates Fourier transform. Similarly one has \begin{al
 &=\int \check{f}(\lambda)\mathrm{d}\nu_A(\lambda)\; .
 \end{align}
 Now $z\mapsto f(z)\tau_t(A)$ is an entire function, so that $\omega(A^*\tau_t(A))$ is as well and thus \begin{align}
-\omega(A^*\tau_f(A))=\int f(\tau+i\beta)\omega(A^*\tau_{t+i\beta}(A))\mathrm{d}t\; .
+\omega(A^*\tau_f(A))=\int f(t+i\beta)\omega(A^*\tau_{t+i\beta}(A))\mathrm{d}t\; .
 \end{align}
 If $\omega$ is a $(\tau,\beta)$-KMS state one finds furthermore \begin{align}
-\omega(A^*\tau_f(A))=\int f(t+i\beta)\omega(\tau_t(A)A^*)\mathrm{d}t=\int\check{f}(\lambda)e^{t\beta \lambda}\mathrm{d}\nu_A\; .
+\omega(A^*\tau_f(A))=\int f(t+i\beta)\omega(\tau_t(A)A^*)\mathrm{d}t=\int\check{f}(\lambda)e^{\beta \lambda}\mathrm{d}\nu_A\; .
 \end{align}
 And since this is true for any test function $\check{f}$ one obtains \begin{align}
-\frac{\mathrm{d}\mu_{A}}{\mathrm{d}\nu_{A}}(\lambda)=e^{\beta\nu}\; .
+\frac{\mathrm{d}\mu_{A}}{\mathrm{d}\nu_{A}}(\lambda)=e^{\beta\nu}\; .\label{eqn::measure_iff_kms}
 \end{align}
 In fact: this is again an if and only if condition. \end{remarks}
 Now we can finally come to the proof of the theorem using all these relations: \begin{proof}
@@ -866,7 +867,7 @@ By Jensen's inequality one obtains \begin{align}
 \exp\left(-\beta \frac{\int\lambda\mathrm{d}\mu_A(\lambda)}{\int\mathrm{d}\mu_A(\lambda)}\right)\leq \frac{\int e^{-\beta\lambda}\mathrm{d}\mu_A(\lambda)}{\int\mathrm{d}\mu_{A}(\lambda)}=\frac{\int\mathrm{d}\nu_A(\lambda)}{\int\mathrm{d}\mu_A}=\frac{\omega(AA^*)}{\omega(A^*A)}\; ,
 \end{align}
 taking the inverse relation gives \begin{align}
-\exp\left(-i\beta\frac{\omega(A^*\delta(A))}{\omega(A^*A)}\right)\geq \frac{\omega(A^*A)}{\omega(AA^*)}\; ,
+\exp\left(-i\beta\frac{\omega(A^*\delta(A))}{\omega(A^*A)}\right)\overset{\eqref{eqn::measure_iff_kms}}{\geq} \frac{\omega(A^*A)}{\omega(AA^*)}\; ,
 \end{align}
 which, after taking a log, yields the $\Rightarrow$ direction. For the inverse direction we have \begin{align}
 \omega(\tau_f(A)^*\tau_f(A))&=\int f(t)f(t')e^{i(t-t')\lambda}\langle \pi_{\omega}(A)\Omega_{\omega},\mathrm{d}P_{\omega}(\lambda)\pi_{\omega}(A)\Omega_{\omega}\rangle\mathrm{d}t\mathrm{d}t'\\
@@ -917,7 +918,7 @@ Now let us come to more characterisatins of equilibrium: \begin{itemize}
 \end{enumerate}
 \end{itemize}
 \begin{example}
-Let us assume for simplicity that $\dim \mathcal{H}<\infty$. Consider the setting of a time-dependent Hamiltonian $H(t)=H(t)^*, t\in[0,\tau]$ with $H(0)=H(\tau)$ and the initial state is a Gibbs state $\omega_{\beta}(A)=Z_{\beta}^{-1}\mathrm{Tr}(e^{-\beta H(0)}A)$. Let $U(t,t_0)$ be the solution of \begin{align}
+Let us assume for simplicity that $\dim \mathcal{H}<\infty$. Consider the setting of a time-dependent Hamiltonian $H(t)=H(t)^*, t\in[0,T]$ with $H(0)=H(T)$ and the initial state is a Gibbs state $\omega_{\beta}(A)=Z_{\beta}^{-1}\mathrm{Tr}(e^{-\beta H(0)}A)$. Let $U(t,t_0)$ be the solution of \begin{align}
 i\frac{\mathrm{d}}{\mathrm{d}t}U(t,t_0)=H(t)U(t,t_0) \qquad \land \qquad U(t_0,t_0)=\mathds{1}\; ,
 \end{align}
 and let $U=U(T,0)$ be the driven evolution over one cycle $[0,T]$. work done by the system on the universe is given by \begin{align}
@@ -1014,13 +1015,13 @@ whereby the latter relation generates dynamics $\tau^V(A)=e^{t\delta(V)}(A)$.
 Let $V=V'\in\mathcal{A}$, and let $\omega^V$ be a $(\tau^V,\beta)$-KMS state and $\omega_+$ be a weak-$*$ accumulation point of \begin{align}
 \omega^V\circ \tau_t\qquad (t\in\mathbb{R})\; .
 \end{align}
-If $\| [V,\tau_t^0(A)]\| \rightarrow 0$ as $t\rightarrow \infty$ and $VA\in\mathcal{A}$. Then $\omega_+$ is a $(\tau^0,\beta)$-KMS state.
+If $\| [V,\tau_t(A)]\| \rightarrow 0$ as $t\rightarrow \infty$ and $VA\in\mathcal{A}$. Then $\omega_+$ is a $(\tau^0,\beta)$-KMS state.
 \end{prop}
 \begin{proof}
  Use the lower semi-continuity  of $u\log\frac{u}{v}$ to take the lower limit \begin{align}
- \omega_+(A^*A)\log\frac{\omega_t(A^*A)}{\omega_t(AA^*)}\leq& \lim\inf (\omega^V\circ \tau_t^0)(A^*A)\log\frac{(\omega^V\circ\tau_V^0)(A^*A)}{(\omega^V\circ\tau_t^0)(A^*A)}\\
- =& \liminf\limits_{t\rightarrow\infty} \omega^V(\tau_t^0(A)^*\tau_t^0(A))\log\frac{\omega^V(\tau_t^0(A)^*\tau_t^0(A))}{\omega^V(\tau_t^V(A)\tau_t^0(A^*)}\\
- \leq& \liminf\limits_{t\rightarrow\infty} -i\beta \omega^V(\underbrace{\tau_t^0(A)^*\delta_V(\tau_t^0(A))}_{=\delta(\tau_t^0(A)+i[V,\tau_t^0(A)]})\; .
+ \omega_+(A^*A)\log\frac{\omega_+(A^*A)}{\omega_+(AA^*)}\leq& \liminf\limits_{t\rightarrow\infty} (\omega^V\circ \tau_t)(A^*A)\log\frac{(\omega^V\circ\tau_t)(A^*A)}{(\omega^V\circ\tau_t)(A^*A)}\\
+ =& \liminf\limits_{t\rightarrow\infty} \omega^V(\tau_t(A)^*\tau_t(A))\log\frac{\omega^V(\tau_t(A)^*\tau_t(A))}{\omega^V(\tau_t(A)\tau_t(A^*))}\\
+ \leq& \liminf\limits_{t\rightarrow\infty} -i\beta \omega^V(\tau_t(A)^*\underbrace{\delta_V(\tau_t(A))}_{\mathclap{=\delta(\tau_t(A)+i[V,\tau_t(A)]}})\; .
  \end{align}
 \begin{itemize}
 \item First term converges to $-i\beta\omega_+(A^*\delta(A))$ since $\delta\circ\tau_t=\tau_t\circ \delta$
@@ -1029,7 +1030,7 @@ If $\| [V,\tau_t^0(A)]\| \rightarrow 0$ as $t\rightarrow \infty$ and $VA\in\math
 \end{align}
 by assumption.
 \end{itemize}
-Hence $\omega_+(A^*A)\log\frac{\omega_+(A^*A)}{\omega_+(AA^*)}=-i\beta\omega_t(A^*\delta(A))$, i.e. $\omega_+$ solves the EEB inequality for the dynamics $\tau^0$ hence $\omega_+$ is a $(\tau^0,\beta)$-KMS state.
+Hence $\omega_+(A^*A)\log\frac{\omega_+(A^*A)}{\omega_+(AA^*)}\leq2-i\beta\omega_t(A^*\delta(A))$, i.e. $\omega_+$ solves the EEB inequality for the dynamics $\tau^0$ hence $\omega_+$ is a $(\tau^0,\beta)$-KMS state.
 \end{proof}
 The following is a more general theorem about KMS states, which will be stated without proof.
 \begin{itemize}
